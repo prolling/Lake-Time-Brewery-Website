@@ -2,7 +2,6 @@ import { React, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../images/Lake-Time-Logo.png";
 import { Link as ReactScrollLink } from "react-scroll";
-import Socials from "./Socials";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -11,51 +10,89 @@ const NavBar = () => {
     {
       id: 1,
       link: "home",
+      name: "Home",
     },
     {
       id: 2,
-      link: "experience",
+      link: "about",
+      name: "About",
     },
     {
       id: 3,
-      link: "portfolio",
+      link: "beers",
+      name: "Beers",
     },
     {
       id: 4,
+      link: "merch",
+      name: "Merch",
+    },
+    {
+      id: 5,
+      link: "events",
+      name: "Events",
+    },
+    {
+      id: 6,
       link: "contact",
+      name: "Contact",
+    },
+    {
+      id: 7,
+      link: "sustainability",
+      name: "Sustainability",
+    },
+    {
+      id: 8,
+      link: "careers",
+      name: "Careers",
+    },
+    {
+      id: 9,
+      link: "news",
+      name: "News",
+    },
+    {
+      id: 10,
+      link: "ourbeers",
+      name: "Our Beers",
+    },
+    {
+      id: 11,
+      link: "distribution",
+      name: "Distribution",
+    },
+    {
+      id: 12,
+      link: "beerfinder",
+      name: "Beer Finder",
     },
   ];
 
   return (
-    <nav className="flex justify-between items-center w-full h-40 bg-rose pr-2 md:fixed">
-      <ReactScrollLink to="home" spy={true} smooth={true} duration={500}>
+    <nav className="flex justify-between items-center w-full h-40 pr-2 md:fixed">
+      {/* Desktop Menu */}
+      <link to="home">
         <div className="cursor-pointer hover:scale-105">
           <img
             className="w-64 h-auto hidden md:flex min-w-[256px]"
             src={logo}
-            alt="Paige Rolling"
+            alt="Lake Time Brewery Logo"
           />
         </div>
-      </ReactScrollLink>
+      </link>
       <ul className="hidden md:flex">
         {links.map((link) => (
           <li
             key={link.id}
             className="text-lavender text-3xl capitalize px-4 cursor-pointer font-medium hover:scale-105 hover:text-gray-500 duration-100"
           >
-            <ReactScrollLink
-              to={link.link}
-              spy={true}
-              smooth={true}
-              duration={500}
-              scrollToTopOffset={50}
-            >
-              {link.link}
-            </ReactScrollLink>
+            <link to={link.link}>{link.name}</link>
           </li>
         ))}
       </ul>
-      <Socials /> {/* render Socials component here */}
+
+      {/* Mobile Menu */}
       <div
         onClick={() => setNav(!nav)}
         className="pr-4 cursor-pointer z-10 text-lavender md:hidden"
@@ -63,21 +100,13 @@ const NavBar = () => {
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-rose to-timberwolf_light text-gray-500">
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-secondary text-black">
           {links.map((link) => (
             <li
               key={link.id}
               className="text-white py-6 text-4xl capitalize px-4 cursor-pointer font-medium hover:scale-105 hover:text-gray-500 duration-100"
             >
-              <ReactScrollLink
-                to={link.link}
-                spy={true}
-                smooth={true}
-                duration={500}
-                onClick={() => setNav(!nav)}
-              >
-                {link.link}
-              </ReactScrollLink>
+              <link to={link.link}>{link.link}</link>
             </li>
           ))}
         </ul>
