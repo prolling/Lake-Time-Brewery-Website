@@ -1,7 +1,8 @@
 import { React, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../images/Lake-Time-Logo.png";
-import { Link as ReactScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
+// import { Link as ReactScrollLink } from "react-scroll";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -9,70 +10,71 @@ const NavBar = () => {
   const links = [
     {
       id: 1,
-      link: "home",
+      link: "/home",
       name: "Home",
     },
     {
       id: 2,
-      link: "about",
+      link: "/about",
       name: "About",
     },
     {
       id: 3,
-      link: "beers",
+      link: "/beers",
       name: "Beers",
     },
     {
       id: 4,
-      link: "merch",
+      link: "/merch",
       name: "Merch",
     },
     {
       id: 5,
-      link: "events",
+      link: "/events",
       name: "Events",
     },
     {
       id: 6,
-      link: "contact",
+      link: "/contact",
       name: "Contact",
     },
-    {
-      id: 7,
-      link: "sustainability",
-      name: "Sustainability",
-    },
-    {
-      id: 8,
-      link: "careers",
-      name: "Careers",
-    },
-    {
-      id: 9,
-      link: "news",
-      name: "News",
-    },
-    {
-      id: 10,
-      link: "ourbeers",
-      name: "Our Beers",
-    },
-    {
-      id: 11,
-      link: "distribution",
-      name: "Distribution",
-    },
-    {
-      id: 12,
-      link: "beerfinder",
-      name: "Beer Finder",
-    },
+    // {
+    //   id: 7,
+    //   link: "/sustainability",
+    //   name: "Sustainability",
+    // },
+    // {
+    //   id: 8,
+    //   link: "/careers",
+    //   name: "Careers",
+    // },
+    // {
+    //   id: 9,
+    //   link: "/news",
+    //   name: "News",
+    // },
+    // {
+    //   id: 10,
+    //   link: "/ourbeers",
+    //   name: "Our Beers",
+    // },
+    // {
+    //   id: 11,
+    //   link: "/distribution",
+    //   name: "Distribution",
+    // },
+    // {
+    //   id: 12,
+    //   link: "/beerfinder",
+    //   name: "Beer Finder",
+    // },
   ];
 
   return (
+    // <div className="text-sm text-red-400">Hello World</div>
     <nav className="flex justify-between items-center w-full h-40 pr-2 md:fixed">
       {/* Desktop Menu */}
-      <link to="home">
+      <a href="/">
         <div className="cursor-pointer hover:scale-105">
           <img
             className="w-64 h-auto hidden md:flex min-w-[256px]"
@@ -80,20 +82,20 @@ const NavBar = () => {
             alt="Lake Time Brewery Logo"
           />
         </div>
-      </link>
-      <ul className="hidden md:flex">
+      </a>
+      {/* <ul className="hidden md:flex">
         {links.map((link) => (
           <li
             key={link.id}
             className="text-lavender text-3xl capitalize px-4 cursor-pointer font-medium hover:scale-105 hover:text-gray-500 duration-100"
           >
-            <link to={link.link}>{link.name}</link>
+            <Link to={link.link}>{link.name}</Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       {/* Mobile Menu */}
-      <div
+      {/* <div
         onClick={() => setNav(!nav)}
         className="pr-4 cursor-pointer z-10 text-lavender md:hidden"
       >
@@ -106,11 +108,11 @@ const NavBar = () => {
               key={link.id}
               className="text-white py-6 text-4xl capitalize px-4 cursor-pointer font-medium hover:scale-105 hover:text-gray-500 duration-100"
             >
-              <link to={link.link}>{link.link}</link>
+              <Link to={link.link}>{link.name}</Link>
             </li>
           ))}
         </ul>
-      )}
+      )} */}
     </nav>
   );
 };
