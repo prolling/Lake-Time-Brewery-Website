@@ -2,7 +2,6 @@ import { React, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../images/Lake-Time-Logo.png";
 import { Link } from "react-router-dom";
-// import { Link as ReactScrollLink } from "react-scroll";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -76,8 +75,7 @@ const NavBar = () => {
   ];
 
   return (
-    // <div className="text-sm text-r">Nav Bar</div>
-    <nav className="flex justify-between items-center w-full h-40 pr-2 md:fixed">
+    <nav className="flex justify-between items-center w-full h-40 pr-2 md:fixed bg-secondary">
       {/* Desktop Menu */}
       <Link to="/">
         <div className="cursor-pointer hover:scale-105">
@@ -89,7 +87,7 @@ const NavBar = () => {
         </div>
       </Link>
 
-      <ul className="hidden md:flex">
+      <ul className="hidden md:flex text-white">
         {links.map((link) => (
           <li
             key={link.id}
@@ -111,7 +109,9 @@ const NavBar = () => {
                   })
                 }
               >
-                <Link to={link.link}>{link.name}</Link>
+                <Link className="text-white" to={link.link}>
+                  {link.name}
+                </Link>
                 {item.isOpen && item.activeLink === link.id && (
                   <ul className="absolute left-0 top-full bg-secondary text-white py-2 px-4">
                     {link.sublinks.map((sublink) => (
@@ -134,7 +134,11 @@ const NavBar = () => {
         onClick={() => setNav(!nav)}
         className="pr-4 cursor-pointer z-10 text-lavender md:hidden"
       >
-        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
+        {nav ? (
+          <FaTimes size={30} className="text-white" />
+        ) : (
+          <FaBars size={30} className="text-white" />
+        )}
       </div>
       {nav && (
         <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-secondary text-black">
