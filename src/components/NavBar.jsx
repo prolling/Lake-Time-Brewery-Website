@@ -75,7 +75,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="flex justify-between items-center w-full h-40 pr-2 md:fixed bg-secondary">
+    <nav className="z-10 flex justify-between items-center w-full h-40 pr-2 md:fixed bg-secondary">
       {/* Desktop Menu */}
       <Link to="/">
         <div className="cursor-pointer hover:scale-105">
@@ -132,7 +132,7 @@ const NavBar = () => {
       {/* Mobile Menu */}
       <div
         onClick={() => setNav(!nav)}
-        className="pr-4 cursor-pointer z-10 text-lavender md:hidden"
+        className="pr-4 cursor-pointer z-30 text-white md:hidden"
       >
         {nav ? (
           <FaTimes size={30} className="text-white" />
@@ -141,7 +141,7 @@ const NavBar = () => {
         )}
       </div>
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-secondary text-black">
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-secondary text-black z-20">
           {links.map((link) => (
             <li
               key={link.id}
