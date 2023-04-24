@@ -1,6 +1,12 @@
 import "./App.css";
 import React from "react";
-import { Routes, Route, Router } from "react-router-dom";
+import {
+  BrowseRouter,
+  Routes,
+  Route,
+  Router,
+  BrowserRouter,
+} from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -12,34 +18,22 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div>
         <NavBar />
 
         <Routes>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/events">
-            <Events />
-          </Route>
-          <Route path="/merch">
-            <Merch />
-          </Route>
-          <Route path="/beers">
-            <Beers />
-          </Route>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/merch" element={<Merch />} />
+          <Route path="/beers" element={<Beers />} />
         </Routes>
 
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
