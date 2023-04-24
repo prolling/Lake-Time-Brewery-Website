@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div
       name="entire-footer"
-      className="flex justify-center items-center mx-auto w-full text-2x1 h-40 absolute bottom-0 text-white font-medium bg-secondary border-2 border-black"
+      className="flex justify-center items-center mx-auto w-full text-2x1 h-40 relative bottom-0 text-white font-medium bg-secondary border-2 border-black"
     >
       <div
         name="content1"
