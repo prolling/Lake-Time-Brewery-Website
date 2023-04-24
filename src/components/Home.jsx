@@ -7,6 +7,9 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import hero1 from "../images/peanut-butter-porter.jpg";
 import hero2 from "../images/kegs.jpg";
 import hero3 from "../images/deck_beers.jpg";
+import sect11 from "../images/glass.JPG";
+import sect13 from "../images/brewery_chamber.jpg";
+import sect12 from "../images/taproom_outside.jpg";
 
 const Home = () => {
   // put in any hero sections here
@@ -107,19 +110,19 @@ const Home = () => {
             {
               title: "Find Our Brews",
               // text: "Find your favorite Lake Time brew at a store near you.",
-              image: hero1,
+              image: sect11,
               link: "/beers",
             },
             {
               title: "Sustainability",
               // text: "Learn about our brewing process.",
-              image: hero2,
+              image: sect12,
               link: "/about",
             },
             {
               title: "Our Story",
               // text: "Learn how we got started",
-              image: hero3,
+              image: sect13,
               link: "/events",
             },
           ].map((item, index) => (
