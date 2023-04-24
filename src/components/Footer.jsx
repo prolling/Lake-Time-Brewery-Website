@@ -1,5 +1,9 @@
 import React from "react";
-import { AiOutlineClockCircle } from "react-icons/ai";
+import {
+  AiOutlineClockCircle,
+  AiFillFacebook,
+  AiOutlineInstagram,
+} from "react-icons/ai";
 import { GrLocation } from "react-icons/gr";
 
 const Footer = () => {
@@ -41,9 +45,13 @@ const Footer = () => {
         name="content3"
         className="flex justify-center space-x-6 items-center flex-grow h-full text-sm md:text-lg min-w-fit border-2 border-black"
       >
-        <div>Socials</div>
-        <div>FB</div>
-        <div>TW</div>
+        <div>Follow Us!</div>
+        <div>
+          <AiFillFacebook size={60} />
+        </div>
+        <div>
+          <AiOutlineInstagram size={60} />
+        </div>
       </div>
     </div>
   );
