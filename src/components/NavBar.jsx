@@ -75,12 +75,12 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="z-10 flex justify-between items-center w-full h-40 pr-2 md:fixed bg-secondary">
+    <nav className="z-20 flex justify-between items-center w-full h-40 pr-2 md:fixed bg-secondary">
       {/* Desktop Menu */}
       <Link to="/">
         <div className="cursor-pointer hover:scale-105">
           <img
-            className="w-64 h-auto hidden md:flex min-w-[256px]"
+            className="w-64 px-6 h-auto  md:flex min-w-[256px] hover:scale-105 duration-200"
             src={logo}
             alt="Lake Time Brewery Logo"
           />
@@ -91,11 +91,11 @@ const NavBar = () => {
         {links.map((link) => (
           <li
             key={link.id}
-            className="text-3xl capitalize px-4 cursor-pointer font-medium hover:scale-105 hover:text-gray-500 duration-100"
+            className="text-3xl capitalize px-4 cursor-pointer font-medium hover:scale-105 hover:text-gray-500 duration-200"
           >
             {link.sublinks ? (
               <div
-                className="relative"
+                className="relative "
                 onMouseEnter={() =>
                   setDrop({
                     activeLink: link.id,
@@ -109,14 +109,22 @@ const NavBar = () => {
                   })
                 }
               >
-                <Link className="text-white" to={link.link}>
+                <Link
+                  className="text-white hover:scale-105 hover:text-gray-500 duration-200 "
+                  to={link.link}
+                >
                   {link.name}
                 </Link>
                 {item.isOpen && item.activeLink === link.id && (
-                  <ul className="absolute left-0 top-full bg-secondary text-white py-2 px-4">
+                  <ul className="absolute left-0 top-full bg-secondary text-white py-2 px-4 border-2 border-primary rounded-md ">
                     {link.sublinks.map((sublink) => (
-                      <li key={sublink.id}>
-                        <Link to={sublink.link}>{sublink.name}</Link>
+                      <li key={sublink.id} className="hover:scale-105 hover:text-gray-500 duration-200">
+                        <Link
+                          className="hover:text-gray-500 duration-200"
+                          to={sublink.link}
+                        >
+                          {sublink.name}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -135,9 +143,9 @@ const NavBar = () => {
         className="pr-4 cursor-pointer z-30 text-white md:hidden"
       >
         {nav ? (
-          <FaTimes size={30} className="text-white" />
+          <FaTimes size={30} className="text-white hover:scale-105 hover:text-gray-500 duration-200" />
         ) : (
-          <FaBars size={30} className="text-white" />
+          <FaBars size={30} className="text-white hover:scale-105 hover:text-gray-500 duration-200" />
         )}
       </div>
       {nav && (
@@ -146,7 +154,7 @@ const NavBar = () => {
             <li
               key={link.id}
               onClick={() => setNav(!nav)}
-              className="text-white py-6 text-4xl capitalize px-4 cursor-pointer font-medium hover:scale-105 hover:text-gray-500 duration-100"
+              className="text-white py-6 text-4xl capitalize px-4 cursor-pointer font-medium hover:scale-105 hover:text-gray-500 duration-200"
             >
               <Link to={link.link}>{link.name}</Link>
             </li>

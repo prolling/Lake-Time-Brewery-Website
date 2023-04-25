@@ -11,9 +11,13 @@ import sect11 from "../images/glass.JPG";
 import sect13 from "../images/brewery_chamber.jpg";
 import sect12 from "../images/taproom_outside.jpg";
 import sect21 from "../images/taproom_inside.JPG";
-import sect31 from "../images/careers_brewery.jpg"
-import sect32 from "../images/lots_of_cans.jpg"
-import sect33 from "../images/t-shirts.jpg"
+import sect31 from "../images/careers_brewery.jpg";
+import sect32 from "../images/lots_of_cans.jpg";
+import sect33 from "../images/t-shirts.jpg";
+import hours from "../images/Hours_yellow.png";
+import location from "../images/location_yellow.png";
+
+import Hero from "./Home/Hero.jsx"
 
 const Home = () => {
   // put in any hero sections here
@@ -68,8 +72,9 @@ const Home = () => {
   return (
     // home content here
     <div>
+      <Hero />
       {/* hero section slider here */}
-      <Slider ref={sliderRef} {...settings} className="pt-40">
+      <Slider ref={sliderRef} {...settings} className="md:pt-40">
         {heroSections.map((hero, index) => (
           <div key={index} className="relative">
             <div className="h-screen flex items-center justify-center bg-black">
@@ -142,7 +147,7 @@ const Home = () => {
                   }}
                 >
                   <div className="text-2xl hover:text-4xl duration-200 absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-50 flex flex-col justify-center items-center">
-                    <h2 className=" font-bold text-white flex items-center">
+                    <h2 className="font-bold text-white flex items-center">
                       {item.title}
                     </h2>
                     {/* <p className="mt-2 text-white flex items-center">
@@ -179,19 +184,29 @@ const Home = () => {
                     borderRight: index !== 2 ? "1px solid white" : "none",
                   }}
                 >
-                  <div className="font-bold text-4xl hover:text-6xl duration-200 absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-50 flex flex-col justify-center items-center">
-                    <div className="flex flew-row justify-between w-full px-4">
-                      <div
+                  <div className="font-bold text-2xl md:text-4xl hover:text-4xl md:hover:text-6xl duration-200 absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-50 flex flex-col justify-center items-center">
+                    <div className="flex flew-row justify-between w-full md:px-4">
+                      {/* <div
                         className="mt-2 text-white flex items-center text-xl"
                         dangerouslySetInnerHTML={{ __html: item.p1 }}
+                      /> */}
+                      <img
+                        src={hours}
+                        alt="hours"
+                        className="z-10 h-80 w-auto hidden lg:block"
                       />
-                      <h2 className="font-bold text-white flex items-center">
+                      <h2 className="font-bold text-white flex items-center justify-center">
                         {item.title}
                       </h2>
-                      <div
+                      <img
+                        src={location}
+                        alt="location"
+                        className="z-10 h-80 w-auto hidden lg:block"
+                      />
+                      {/* <div
                         className="font-bold mt-2 text-white flex items-center text-xl"
                         dangerouslySetInnerHTML={{ __html: item.p2 }}
-                      />
+                      /> */}
                     </div>
                   </div>
                 </div>
@@ -252,11 +267,6 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* one section for social media here */}
-      <div>
-        <h1>Social Media</h1>
       </div>
     </div>
   );
