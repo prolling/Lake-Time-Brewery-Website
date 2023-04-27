@@ -1,51 +1,64 @@
 import React from "react";
-import { AiOutlineClockCircle } from "react-icons/ai";
+import {
+  AiOutlineClockCircle,
+  AiFillFacebook,
+  AiOutlineInstagram,
+} from "react-icons/ai";
 import { GrLocation } from "react-icons/gr";
 
 const Footer = () => {
   return (
-    <div
-      name="entire-footer"
-      className="flex justify-center items-center mx-auto w-full text-2x1 h-40 relative bottom-0 text-white font-medium bg-secondary border-2 border-black"
-    >
-      <div
-        name="content1"
-        className="flex justify-center space-x-6 items-center flex-grow h-full text-sm md:text-lg min-w-fit border-2 border-black"
-      >
-        <div>
-          <GrLocation size={60} className="text-white" />
+    <footer className="bg-secondary text-gray-300 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {/* Address */}
+          <div>
+            <h3 className="text-xl font-medium mb-2">Location</h3>
+            <p className="text-md">801 Main Avenue</p>
+            <p className="text-md">Clear Lake, IA</p>
+            <p className="text-md">(641) 357-2040</p>
+          </div>
+
+          {/* Hours */}
+          <div>
+            <h3 className="text-xl font-medium mb-2">Hours</h3>
+            <p className="text-md">Wednesday 4pm - 9pm</p>
+            <p className="text-md">Thursday & Friday 4pm - 10pm</p>
+            <p className="text-md">Saturday 12pm - 10pm</p>
+            <p className="text-md">Sunday 12pm - 8pm</p>
+          </div>
+
+          {/* Facebook link */}
+          <div>
+            <h3 className="text-xl font-medium mb-2">Follow Us!</h3>
+            <a
+              href="https://www.facebook.com/laketimebrewery/?fref=ts"
+              target="blank"
+              className=" hover:text-gray-400 transition-colors"
+            >
+              <AiFillFacebook
+                className="inline-block mr-1 hover:scale-105 duration-200"
+                size={40}
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/laketimebrewery/"
+              target="blank"
+              className=" hover:text-gray-400 transition-colors"
+            >
+              <AiOutlineInstagram
+                className="inline-block mr-1 hover:scale-105 duration-200"
+                size={40}
+              />
+            </a>
+          </div>
         </div>
-        <ul>
-          <li>801 Main Avenue</li>
-          <li>Clear Lake, IA</li>
-          <li> (641) 357-2040</li>
-        </ul>
-      </div>
-      <div
-        name="content2"
-        className="flex justify-center space-x-6 items-center flex-grow h-full text-sm md:text-lg min-w-fit border-2 border-black"
-      >
-        <div>
-          <AiOutlineClockCircle size={60} className="text-white" />
+
+        <div className="mt-4 text-sm text-gray-400">
+          <p>&copy; 2023 Lake Time Brewery</p>
         </div>
-        <ul>
-          <title>Hours:</title>
-          <li>Wed 4 pm - 9 pm</li>
-          <li>Thurs 4 pm - 10pm</li>
-          <li>Fri 4 pm - 10pm</li>
-          <li>Sat 12pm - 10pm</li>
-          <li>Sun 12pm - 8 pm</li>
-        </ul>
       </div>
-      <div
-        name="content3"
-        className="flex justify-center space-x-6 items-center flex-grow h-full text-sm md:text-lg min-w-fit border-2 border-black"
-      >
-        <div>Socials</div>
-        <div>FB</div>
-        <div>TW</div>
-      </div>
-    </div>
+    </footer>
   );
 };
 
