@@ -75,23 +75,23 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="z-20 flex justify-between items-center w-full h-40 pr-2 md:fixed bg-secondary">
+    <nav className="z-20 flex justify-between items-center w-full h-24 pr-2 md:fixed bg-secondary">
       {/* Desktop Menu */}
       <Link to="/">
-        <div className="cursor-pointer hover:scale-105">
+        <div className="cursor-pointer">
           <img
-            className="w-64 px-6 h-auto  md:flex min-w-[256px] hover:scale-105 duration-200"
+            className="w-40 px-6 h-auto  md:flex duration-200"
             src={logo}
             alt="Lake Time Brewery Logo"
           />
         </div>
       </Link>
 
-      <ul className="hidden md:flex text-white">
+      <ul className="hidden md:flex text-gray-300 text-xl font-medium">
         {links.map((link) => (
           <li
             key={link.id}
-            className="text-3xl capitalize px-4 cursor-pointer font-medium hover:scale-105 hover:text-gray-500 duration-200"
+            className="capitalize px-4 cursor-pointer font-medium hover:text-gray-500 duration-200"
           >
             {link.sublinks ? (
               <div
@@ -110,15 +110,18 @@ const NavBar = () => {
                 }
               >
                 <Link
-                  className="text-white hover:scale-105 hover:text-gray-500 duration-200 "
+                  className="text-gray-300  hover:text-gray-500 duration-200 "
                   to={link.link}
                 >
                   {link.name}
                 </Link>
                 {item.isOpen && item.activeLink === link.id && (
-                  <ul className="absolute left-0 top-full bg-secondary text-white py-2 px-4 border-2 border-primary rounded-md ">
+                  <ul className="absolute left-0 top-full bg-secondary text-gray-300 py-2 px-4 shadow-md shadow-black ">
                     {link.sublinks.map((sublink) => (
-                      <li key={sublink.id} className="hover:scale-105 hover:text-gray-500 duration-200">
+                      <li
+                        key={sublink.id}
+                        className=" hover:text-gray-500 duration-200"
+                      >
                         <Link
                           className="hover:text-gray-500 duration-200"
                           to={sublink.link}
@@ -143,9 +146,15 @@ const NavBar = () => {
         className="pr-4 cursor-pointer z-30 text-white md:hidden"
       >
         {nav ? (
-          <FaTimes size={30} className="text-white hover:scale-105 hover:text-gray-500 duration-200" />
+          <FaTimes
+            size={30}
+            className="text-white hover:scale-105 hover:text-gray-500 duration-200"
+          />
         ) : (
-          <FaBars size={30} className="text-white hover:scale-105 hover:text-gray-500 duration-200" />
+          <FaBars
+            size={30}
+            className="text-white hover:scale-105 hover:text-gray-500 duration-200"
+          />
         )}
       </div>
       {nav && (
