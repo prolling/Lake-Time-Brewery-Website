@@ -14,19 +14,25 @@ import sect33 from "../images/t-shirts.jpg";
 import hours from "../images/Hours_yellow.png";
 import location from "../images/location_yellow.png";
 
-import Hero from "./Home/Hero.jsx"
+import Hero from "./Home/Hero.jsx";
+import Beers from "./Home/Beers";
 
 const Home = () => {
   // put in any hero sections here
-  
 
   return (
     // home content here
     <div>
       <Hero />
-      
+      <Beers />
+    </div>
+  );
+};
 
-      {/* 3 sections here with image backgrounds */}
+export default Home;
+
+{
+  /* 3 sections here with image backgrounds
       <div className="mx-auto py-2 w-full">
         <div className="flex flex-wrap">
           {[
@@ -63,24 +69,24 @@ const Home = () => {
                     <h2 className="font-bold text-white flex items-center">
                       {item.title}
                     </h2>
-                    {/* <p className="mt-2 text-white flex items-center">
-                {item.text}
-              </p> */}
                   </div>
                 </div>
               </Link>
             </div>
           ))}
         </div>
-      </div>
+      </div> */
+}
 
-      {/* one section taproom here */}
-      <div className="mx-auto py-2 w-full">
+{
+  /* one section taproom here */
+}
+{
+  /* <div className="mx-auto py-2 w-full">
         <div className="flex flex-wrap">
           {[
             {
               title: "Taproom",
-              // text: "Find your favorite Lake Time brew at a store near you.",
               image: sect21,
               link: "/events",
               p1: "HOURS: Wednesday 4pm - 9pm <br> Thursday & Friday 4pm - 10 pm <br> Saturday 12pm - 10pm <br> Sunday 12pm - 8pm",
@@ -99,10 +105,6 @@ const Home = () => {
                 >
                   <div className="font-bold text-2xl md:text-4xl hover:text-4xl md:hover:text-6xl duration-200 absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-50 flex flex-col justify-center items-center">
                     <div className="flex flew-row justify-between w-full md:px-4">
-                      {/* <div
-                        className="mt-2 text-white flex items-center text-xl"
-                        dangerouslySetInnerHTML={{ __html: item.p1 }}
-                      /> */}
                       <img
                         src={hours}
                         alt="hours"
@@ -116,10 +118,6 @@ const Home = () => {
                         alt="location"
                         className="z-10 h-80 w-auto hidden lg:block"
                       />
-                      {/* <div
-                        className="font-bold mt-2 text-white flex items-center text-xl"
-                        dangerouslySetInnerHTML={{ __html: item.p2 }}
-                      /> */}
                     </div>
                   </div>
                 </div>
@@ -127,15 +125,23 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */
+}
 
-      {/* one section for events here */}
-      <div>
+{
+  /* one section for events here */
+}
+{
+  /* <div>
         <h1>Events</h1>
-      </div>
+      </div> */
+}
 
-      {/* 3 sections here with image backgrounds */}
-      <div className="mx-auto py-2 w-full">
+{
+  /* 3 sections here with image backgrounds */
+}
+{
+  /* <div className="mx-auto py-2 w-full">
         <div className="flex flex-wrap">
           {[
             {
@@ -171,9 +177,6 @@ const Home = () => {
                     <h2 className=" font-bold text-white flex items-center">
                       {item.title}
                     </h2>
-                    {/* <p className="mt-2 text-white flex items-center">
-                {item.text}
-              </p> */}
                   </div>
                 </div>
               </Link>
@@ -181,8 +184,5 @@ const Home = () => {
           ))}
         </div>
       </div>
-    </div>
-  );
-};
-
-export default Home;
+    </div> */
+}
