@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Hero from "./Home/Hero.jsx";
-import Beers from "./Home/Beers";
-import Giving from "./Home/Giving.jsx";
+import Hero from "./Hero.jsx";
+import Beers from "./Beers";
+import Giving from "./Giving.jsx";
 
 const Home = () => {
   // put in any hero sections here
