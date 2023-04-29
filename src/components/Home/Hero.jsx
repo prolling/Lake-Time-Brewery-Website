@@ -4,6 +4,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import hero1 from "../../images/peanut-butter-porter.jpg"
+import hero2 from "../../images/kegs.jpg"
+import hero3 from "../../images/taproom_outside.jpg"
 // import hero1 from "C:/Users/paige/OneDrive/Desktop/Iowa State/COM S 319/Final/lake-time-website/src/images/peanut-butter-porter.jpg";
 
 const Hero = () => {
@@ -19,14 +22,14 @@ const Hero = () => {
       title: "Brewing a Better World",
       text: "We are committed to serving our community and being environmentally friendly through the brewing process.",
       button: "About Lake Time",
-      image: hero1,
+      image: hero2,
       link: "/about",
     },
     {
-      title: "Our Taproom",
-      text: "Explore our taproom and events calendar.",
+      title: "Our Taproom and Events",
+      text: "Explore our taproom and events calendar. Join us for a pint here at Lake Time!",
       button: "Visit Us",
-      image: hero1,
+      image: hero3,
       link: "/events",
     },
   ];
@@ -57,11 +60,11 @@ const Hero = () => {
   };
 
   return (
-    <Slider ref={sliderRef} {...settings} className="">
+    <Slider ref={sliderRef} {...settings} className="bg-gradient-to-t from-white to-secondary">
       {heroSections.map((hero, index) => (
-        <div key={index} className="pt-40 pb-16 w-full bg-secondary">
-          <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row relative">
-            <div className="w-1/2 h-full bg-secondary flex items-center">
+        <div key={index} className="pt-40 pb-16 w-full">
+          <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-64 px-4 md:flex-row relative">
+            <div className="w-1/2 h-full flex items-center">
               <img
                 className="rounded-2xl md:w-full md:max-w-[250px]"
                 src={hero.image}
