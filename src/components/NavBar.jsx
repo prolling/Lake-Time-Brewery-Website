@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from "../images/Lake-Time-Logo.png";
+import logo from "../images/logos/Lake-Time-Logo.png";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {

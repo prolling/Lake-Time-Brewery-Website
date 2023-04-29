@@ -8,8 +8,8 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import About from "./components/About";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
 import Contact from "./components/Contact";
 import Events from "./components/Events";
 import Merch from "./components/Merch";

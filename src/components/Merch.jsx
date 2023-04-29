@@ -1,14 +1,5 @@
 import React from "react";
-import cap from "../images/merch_images/m_cap.jpeg";
-import gift_pack_pint from "../images/merch_images/m_gift_pack_pint.jpg";
-import lake_time_growler from "../images/merch_images/m_lake_time_growler.jpg";
-import lots_of_shirts from "../images/merch_images/m_lots_of_shirts.jpg";
-import pint_glassware from "../images/merch_images/m_pint_glassware.jpeg";
-import single_gift_pint from "../images/merch_images/m_single_gift_pint.jpg";
-import sweatshirt from "../images/merch_images/sweatshirt.jpeg";
-import t_shirts from "../images/merch_images/t-shirts.jpg";
-import tulips_samplers from "../images/merch_images/tulips_samplers.jpeg";
-import two_boston_rounds from "../images/merch_images/two_boston_rounds.jpg";
+import kegs from "../images/merch_images/beanie.jpg";
 
 const Merch = () => {
   const merchItems = [
