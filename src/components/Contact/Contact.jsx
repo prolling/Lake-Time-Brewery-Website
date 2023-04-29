@@ -9,8 +9,8 @@ const Contact = () => {
   return (
     <div>
       <Methods />
-      <Socials />
       <Map />
+      <Socials />
       <Donations />
     </div>
   );
