@@ -4,9 +4,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import hero1 from "../../images/taproom_images/peanut-butter-porter.jpg"
-import hero2 from "../../images/production_images/kegs.jpg"
-import hero3 from "../../images/taproom_images/taproom_outside.jpg"
+import hero1 from "../../images/taproom_images/peanut-butter-porter.jpg";
+import hero2 from "../../images/production_images/kegs.jpg";
+import hero3 from "../../images/taproom_images/taproom_outside.jpg";
 
 const Hero = () => {
   const heroSections = [
@@ -59,7 +59,11 @@ const Hero = () => {
   };
 
   return (
-    <Slider ref={sliderRef} {...settings} className="bg-gradient-to-t from-white to-secondary">
+    <Slider
+      ref={sliderRef}
+      {...settings}
+      className="bg-gradient-to-t from-white to-secondary"
+    >
       {heroSections.map((hero, index) => (
         <div key={index} className="pt-40 pb-16 w-full">
           <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-64 px-4 md:flex-row relative">
@@ -77,20 +81,22 @@ const Hero = () => {
 
               <p className="text-2xl text-white mb-8">{hero.text}</p>
               <div className="flex flex-col items-center">
-              <Link to={hero.link} className="hover:cursor-pointer">
-                <button className="group text-black w-fit px-6 py-3 my-2 flex items-center rounded-md bg-white hover:cursor-pointer">
-                  {hero.button}
-                </button>
-              </Link>
-              <div className="flex justify-center mt-4 absolute bottom-0 left-0 right-0 z-10">
-                <FiChevronLeft
-                  className="mx-4 text-white cursor-pointer text-4xl"
-                  onClick={handlePrevClick}
-                />
-                <FiChevronRight
-                  className="mx-4 text-white cursor-pointer text-4xl"
-                  onClick={handleNextClick}
-                />
+               
+                <Link to={hero.link} className="hover:cursor-pointer">
+                  <button className="group text-white w-fit px-6 py-3 my-2 mx-auto flex items-center rounded-md bg-secondary">
+                    {hero.button}
+                  </button>
+                </Link>
+                               
+                <div className="flex justify-center mt-4 absolute bottom-0 left-0 right-0 z-10">
+                  <FiChevronLeft
+                    className="mx-4 text-white cursor-pointer text-4xl"
+                    onClick={handlePrevClick}
+                  />
+                  <FiChevronRight
+                    className="mx-4 text-white cursor-pointer text-4xl"
+                    onClick={handleNextClick}
+                  />
                 </div>
               </div>
             </div>
