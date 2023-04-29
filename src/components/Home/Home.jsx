@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Hero from "./Hero.jsx";
 import Beers from "./Beers";
 import Giving from "./Giving.jsx";
+import Careers from "./Careers.jsx";
 
 const Home = () => {
   // put in any hero sections here
@@ -16,6 +17,7 @@ const Home = () => {
       <Hero />
       <Beers />
       <Giving />
+      <Careers />
     </div>
   );
 };

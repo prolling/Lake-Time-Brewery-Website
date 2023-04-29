@@ -31,7 +31,7 @@ const Giving = () => {
       title: "Brews on the Beach",
       text: "Join us for our annual Brews on the Beach festival, featuring live music, food trucks, and of course, great craft beer. Funds from Brews on the Beach go towards community projects led by the Clear Lake Rotary Club.",
       button: "About Lake Time",
-      img: sect1,
+      img: sect3,
       imgAlt: "Brews on the Beach",
       link: "https://www.brewsonthebeach.com/tickets",
     },
