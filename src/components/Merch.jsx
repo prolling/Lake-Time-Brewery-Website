@@ -64,24 +64,24 @@ const Merch = () => {
       text: "text for beanie",
       img: beanie,
       imgAlt: "img9",
-    }
-  ]
+    },
+  ];
   return (
-      <div name="about" className="pt-24 bg-slate-400">
-        <div className="flex flex-wrap justify-center items-center gap-4">
-          {merchItems.map((item, index) => (
-            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-              <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                <img src={item.img} alt={item.imgAlt} className="w-full" />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                  <p className="text-gray-700">{item.text}</p>
-                </div>
+    <div name="about" className="pt-24 bg-slate-400">
+      <div className="flex flex-wrap justify-center items-center gap-4">
+        {merchItems.map((item, index) => (
+          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+              <img src={item.img} alt={item.imgAlt} className="w-full" />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-700">{item.text}</p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+    </div>
   );
 };
 
