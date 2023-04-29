@@ -4,9 +4,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import hero1 from "../../images/peanut-butter-porter.jpg"
-import hero2 from "../../images/kegs.jpg"
-import hero3 from "../../images/taproom_outside.jpg"
+import hero1 from "../../images/taproom_images/peanut-butter-porter.jpg"
+import hero2 from "../../images/production_images/kegs.jpg"
+import hero3 from "../../images/taproom_images/taproom_outside.jpg"
 
 const Hero = () => {
   const heroSections = [

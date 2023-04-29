@@ -2,20 +2,10 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
-
-import sect11 from "../images/glass.JPG";
-import sect13 from "../images/brewery_chamber.jpg";
-import sect12 from "../images/taproom_outside.jpg";
-import sect21 from "../images/taproom_inside.JPG";
-import sect31 from "../images/careers_brewery.jpg";
-import sect32 from "../images/lots_of_cans.jpg";
-import sect33 from "../images/t-shirts.jpg";
-import hours from "../images/Hours_yellow.png";
-import location from "../images/location_yellow.png";
 
 import Hero from "./Home/Hero.jsx";
 import Beers from "./Home/Beers";
+import Giving from "./Home/Giving.jsx";
 
 const Home = () => {
   // put in any hero sections here
@@ -25,6 +15,7 @@ const Home = () => {
     <div>
       <Hero />
       <Beers />
+      <Giving />
     </div>
   );
 };

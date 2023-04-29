@@ -1,5 +1,5 @@
 import React from "react";
-import kegs from "../images/kegs.jpg";
+import kegs from "../images/merch_images/beanie.jpg";
 
 const Merch = () => {
   return (
