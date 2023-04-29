@@ -8,7 +8,7 @@ import { GrLocation } from "react-icons/gr";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-gray-300 py-8">
+    <footer className="bg-secondary text-center text-gray-300 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {/* Address */}

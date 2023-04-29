@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const About = () => {
   return (
-    <div name="about" className="pt-24 bg-slate-400">
+    <div name="about" className="pt-24">
       {/* about story*/}
       <div className="border-2 border-black p-12">
         <h1 className="text-7xl font-medium text-center">Lake Time</h1>
@@ -16,7 +16,7 @@ const About = () => {
       </div>
 
       {/* about sections*/}
-      <div className="flex items-center justify-evenly border-2 border-black p-12">
+      <div className="flex items-center justify-evenly border-2 border-black p-24">
         <div>
           <h3>Sustainability</h3>
           <img src="" alt="bw sustain" />
