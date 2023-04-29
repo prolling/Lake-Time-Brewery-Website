@@ -12,7 +12,7 @@ const About = () => {
     <div name="about" className="pt-24">
       {/* about story*/}
       <div className="flex flex-col items-center  p-12">
-        <h1 className="text-7xl font-medium text-center">Lake Time</h1>
+        <h1 className="text-7xl font-medium text-center">Lakeee Time</h1>
         <div className="max-w-4xl">
           <h2 className="m-8 text-center text-lg">
             What is Lake Time you ask? Lake Time is not a time, but a state of
@@ -84,7 +84,7 @@ const About = () => {
         </div>
       )}
       {selectedCard === "careersCard" && (
-        <div className=" flex justify-center m-12">
+        <div className=" flex justify-center p-6 m-12">
           <div className="flex justify-center items-center ">
             <img src={img1} alt="career text" className="max-w-sm" />
             <p>Text to display when Careers card is clicked</p>
