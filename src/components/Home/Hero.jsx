@@ -4,14 +4,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 import hero1 from "../../images/peanut-butter-porter.jpg"
 import hero2 from "../../images/kegs.jpg"
 import hero3 from "../../images/taproom_outside.jpg"
-// import hero1 from "C:/Users/paige/OneDrive/Desktop/Iowa State/COM S 319/Final/lake-time-website/src/images/peanut-butter-porter.jpg";
-=======
-import hero1 from "../../images/peanut-butter-porter.jpg";
->>>>>>> cb173ee69614d53c7ccf06e255b2f31a6cc83b1a
 
 const Hero = () => {
   const heroSections = [
@@ -82,8 +77,8 @@ const Hero = () => {
 
               <p className="text-2xl text-white mb-8">{hero.text}</p>
               <div className="flex flex-col items-center">
-              <Link to={hero.link}>
-                <button className="bg-white text-black py-2 px-4 rounded-full font-medium hover:bg-gray-200 transition duration-300">
+              <Link to={hero.link} className="hover:cursor-pointer">
+                <button className="group text-black w-fit px-6 py-3 my-2 flex items-center rounded-md bg-white hover:cursor-pointer">
                   {hero.button}
                 </button>
               </Link>
