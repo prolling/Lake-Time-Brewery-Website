@@ -1,6 +1,8 @@
 import { React, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from "../images/logos/Lake-Time-Logo.png";
+import logo2 from "../images/logos/Lake-Time-Logo.png";
+import logo1 from "../images/logos/LTB 1Color Logo FINAL 2018.png"
+import logo from "../images/logos/LTB Name Only FINAL.png"
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -75,7 +77,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="z-20 flex justify-between items-center w-full h-24 pr-2 md:fixed bg-secondary">
+    <nav className="z-20 flex justify-between items-center w-full h-16 pr-2 md:fixed bg-white">
       {/* Desktop Menu */}
       <Link to="/">
         <div className="cursor-pointer">
@@ -87,11 +89,11 @@ const NavBar = () => {
         </div>
       </Link>
 
-      <ul className="hidden md:flex text-gray-300 text-xl font-medium">
+      <ul className="hidden md:flex text-black text-xl font-medium">
         {links.map((link) => (
           <li
             key={link.id}
-            className="capitalize px-4 cursor-pointer font-medium hover:text-gray-500 duration-200"
+            className="capitalize text-md font-semibold px-4 cursor-pointer hover:text-gray-500 duration-200"
           >
             {link.sublinks ? (
               <div
@@ -110,13 +112,13 @@ const NavBar = () => {
                 }
               >
                 <Link
-                  className="text-gray-300  hover:text-gray-500 duration-200 "
+                  className="text-black  hover:text-gray-500 duration-200 "
                   to={link.link}
                 >
                   {link.name}
                 </Link>
                 {item.isOpen && item.activeLink === link.id && (
-                  <ul className="absolute left-0 top-full bg-secondary text-gray-300 py-2 px-4 shadow-md shadow-black ">
+                  <ul className="absolute left-0 top-full bg-white text-black py-2 px-4 shadow-md shadow-black ">
                     {link.sublinks.map((sublink) => (
                       <li
                         key={sublink.id}
@@ -153,7 +155,7 @@ const NavBar = () => {
         ) : (
           <FaBars
             size={30}
-            className="text-white hover:scale-105 hover:text-gray-500 duration-200"
+            className="text-secondary hover:scale-105 hover:text-gray-500 duration-200"
           />
         )}
       </div>
