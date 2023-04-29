@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import img1 from "../images/careers_brewery.jpg";
+import img1 from "../images/community_images/careers_brewery.jpg";
 
 const About = () => {
   const [selectedCard, setSelectedCard] = useState(null);
