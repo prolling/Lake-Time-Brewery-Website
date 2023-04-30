@@ -65,7 +65,7 @@ const Beers = () => {
   ];
 
   return (
-    <div className="max-w-screen-lg mx-auto relative py-20">
+    <div className="max-w-screen-lg mx-auto relative py-20 ">
       <h2 className="text-4xl font-bold text-center pb-2">Our Brews</h2>
       <div className="">
         <Slider ref={sliderRef} {...settings} className="">

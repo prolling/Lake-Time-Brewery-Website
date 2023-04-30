@@ -81,13 +81,12 @@ const Hero = () => {
 
               <p className="text-2xl text-white mb-8">{hero.text}</p>
               <div className="flex flex-col items-center">
-               
                 <Link to={hero.link} className="hover:cursor-pointer">
                   <button className="group text-white w-fit px-6 py-3 my-2 mx-auto flex items-center rounded-md bg-secondary">
                     {hero.button}
                   </button>
                 </Link>
-                               
+
                 <div className="flex justify-center mt-4 absolute bottom-0 left-0 right-0 z-10">
                   <FiChevronLeft
                     className="mx-4 text-white cursor-pointer text-4xl"
