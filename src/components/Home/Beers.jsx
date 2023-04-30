@@ -10,6 +10,12 @@ import beer3 from "../../images/can_images/39-clear_lake_ipa/39-can_mockup.png";
 import beer4 from "../../images/can_images/29-cabana_boy/29-can_mockup.png";
 import beer5 from "../../images/can_images/52-funfetti/52-can_mockup.png";
 import beer6 from "../../images/can_images/66-idiocracy/66-can_mockup.png";
+import beer7 from "../../images/can_images/1-copper_road_sticke_alt/1-can_mock_up.png";
+import beer8 from "../../images/can_images/10-archors_aweigh/10-can_mockup.png";
+import beer9 from "../../images/can_images/21-bearfoot_robust_porter/21-can_mockup.png";
+import beer10 from "../../images/can_images/23-billy_goat_doppelbock/23-can_mockup.png";
+import beer11 from "../../images/can_images/42-crooked_shillalah/42-can_mockup.png";
+import beer12 from "../../images/can_images/48-dunkel_donuts/48-can_mockup.png";
 
 const Beers = () => {
   // reference to the slider
@@ -61,6 +67,30 @@ const Beers = () => {
     {
       name: "Idiocracy",
       image: beer6,
+    },
+    {
+      name: "Copper Road",
+      image: beer7,
+    },
+    {
+      name: "Archors Aweigh",
+      image: beer8,
+    },
+    {
+      name: "Bearfoot Robust Porter",
+      image: beer9,
+    },
+    {
+      name: "Billy Goat Doppelbock",
+      image: beer10,
+    },
+    {
+      name: "Crooked Shillalah",
+      image: beer11,
+    },
+    {
+      name: "Dunkel Donuts",
+      image: beer12,
     },
   ];
 
