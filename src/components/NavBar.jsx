@@ -1,13 +1,24 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo2 from "../images/logos/Lake-Time-Logo.png";
-import logo1 from "../images/logos/LTB 1Color Logo FINAL 2018.png"
-import logo from "../images/logos/LTB Name Only FINAL.png"
-import { Link } from "react-router-dom";
+import logo1 from "../images/logos/LTB 1Color Logo FINAL 2018.png";
+import logo from "../images/logos/LTB Name Only FINAL.png";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
+  const [activeLink, setActiveLink] = useState(null);
   const [nav, setNav] = useState(false);
   const [item, setDrop] = useState({ activeLink: null, isOpen: false });
+  const location = useLocation();
+
+  useEffect(() => {
+    const currentLink = links.find((link) => link.link === location.pathname);
+    if (currentLink) {
+      setActiveLink(currentLink.id);
+    } else {
+      setActiveLink(null);
+    }
+  }, [location.pathname]);
 
   const links = [
     {
@@ -91,10 +102,39 @@ const NavBar = () => {
 
       <ul className="hidden md:flex text-black text-xl font-medium">
         {links.map((link) => (
+          // <li
+          //   key={link.id}
+          //   className="capitalize text-md font-semibold px-4 cursor-pointer hover:text-gray-500 duration-200"
+          // >
           <li
             key={link.id}
-            className="capitalize text-md font-semibold px-4 cursor-pointer hover:text-gray-500 duration-200"
+            className={`capitalize text-md font-semibold px-4 cursor-pointer ${
+              activeLink === link.id ? "text-secondary" : "text-black"
+            } hover:text-secondary relative transition-colors duration-200`}
+            onMouseEnter={() => {
+              setDrop({
+                activeLink: link.id,
+                isOpen: true,
+              });
+            }}
+            onMouseLeave={() => {
+              setDrop({
+                activeLink: null,
+                isOpen: false,
+              });
+            }}
+            onClick={() => setActiveLink(link.id)}
           >
+            <span
+              style={{ top: "-20px" }}
+              className={`absolute h-2 w-full bg-secondary ${
+                activeLink === link.id ||
+                (item.isOpen && item.activeLink === link.id)
+                  ? "opacity-100"
+                  : "opacity-0"
+              } left-0 transition-opacity duration-200 z-[-1]`}
+            ></span>
+
             {link.sublinks ? (
               <div
                 className="relative "
@@ -112,7 +152,9 @@ const NavBar = () => {
                 }
               >
                 <Link
-                  className="text-black  hover:text-gray-500 duration-200 "
+                  className={`${
+                    activeLink === link.id ? "text-secondary" : "text-black"
+                  } hover:text-secondary duration-200`}
                   to={link.link}
                 >
                   {link.name}
@@ -122,10 +164,11 @@ const NavBar = () => {
                     {link.sublinks.map((sublink) => (
                       <li
                         key={sublink.id}
-                        className=" hover:text-gray-500 duration-200"
+                        className=" hover:text-secondary duration-200"
+                        onClick={() => setActiveLink(link.id)}
                       >
                         <Link
-                          className="hover:text-gray-500 duration-200"
+                          className="hover:text-secondary duration-200"
                           to={sublink.link}
                         >
                           {sublink.name}
