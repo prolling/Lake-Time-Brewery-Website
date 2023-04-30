@@ -69,13 +69,13 @@ const Hero = () => {
           <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-auto md:h-64 px-4 md:flex-row relative">
             <div className="w-full md:w-1/2 h-full flex items-center justify-center md:justify-start">
               <img
-                className="rounded-2xl object-cover h-56 w-full max-w-[300px] md:max-w-[300px] mx-auto md:mx-0"
+                className="rounded-2xl object-cover h-56 w-full max-w-[300px] md:max-w-[300px] mx-auto md:mx-0 opacity-0 animate-fade-in duration-2 delay-3"
                 src={hero.image}
                 alt={hero.title}
               />
             </div>
-            <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-8 mt-8 md:mt-0">
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 text-center md:text-left">
+            <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-8 mt-8 md:mt-0 opacity-0 animate-fade-in duration-2 delay-1">
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 text-center md:text-left ">
                 {hero.title}
               </h1>
 
@@ -85,7 +85,7 @@ const Hero = () => {
               <div className="flex flex-col items-center">
                 <a
                   href={hero.link}
-                  className="group w-fit block text-white px-6 py-3 my-2 mx-auto flex items-center justify-center rounded-md bg-secondary hover:cursor-pointer hover:scale-105 duration-100"
+                  className="group w-fit text-white px-6 py-3 my-2 mx-auto flex items-center justify-center rounded-md bg-secondary hover:cursor-pointer hover:scale-105 duration-100 animate-jump-3"
                 >
                   {hero.button}
                 </a>
