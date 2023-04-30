@@ -27,7 +27,7 @@ const Careers = () => {
               Check out our current openings or reach out to us to find
               opportunities that match your skills and interests!
             </p>
-            <Link to="/about" className="hover:cursor-pointer">
+            <Link to="/about#top" className="hover:cursor-pointer">
               <button className="hover:scale-105 duration-100 mt-4 inline-block bg-white text-black text-lg font-semibold py-2 px-4 rounded hover:bg-gray-200 hover:text-black">
                 Explore Careers
               </button>

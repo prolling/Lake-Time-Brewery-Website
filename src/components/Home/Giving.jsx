@@ -15,7 +15,7 @@ const Giving = () => {
       button: "Our Community",
       img: sect1,
       imgAlt: "Community Service",
-      link: "/about",
+      link: "/about#top",
     },
     {
       index: 2,
@@ -24,7 +24,7 @@ const Giving = () => {
       button: "Our Brewing Process",
       img: sect2,
       imgAlt: "Sustainability",
-      link: "/about",
+      link: "/about#top",
     },
     {
       index: 3,

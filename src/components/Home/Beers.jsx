@@ -115,7 +115,7 @@ const Beers = () => {
         onClick={handleNextClick}
       />
       <div className="text-center">
-        <Link to="/beers" className="hover:cursor-pointer text-center">
+        <Link to="/beers#top" className="hover:cursor-pointer text-center">
           <button className="hover:scale-105 duration-100 group text-white w-fit px-6 py-3 my-2 text-center rounded-md bg-secondary hover:cursor-pointer">
             Find Our Brews
           </button>
