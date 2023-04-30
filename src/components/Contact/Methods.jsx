@@ -26,7 +26,7 @@ const Methods = () => {
     ];
 
   return (
-        <div className="flex flex-wrap justify-center mt-12 pt-32">
+        <div className="flex flex-wrap justify-center pt-32">
           {contacts.map((contact) => (
             <div className="w-full sm:w-1/3 lg:w-1/4 bg-gray-200 shadow-lg rounded-lg px-8 py-6 m-4" key={contact.title}>
               <div className="flex items-center">
