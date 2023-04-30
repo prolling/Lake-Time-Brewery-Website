@@ -20,11 +20,11 @@ const AboutTop = () => {
     <div name="about" className="">
       {/* about story*/}
       <div className="flex flex-col items-center pt-40 p-12 bg-gradient-to-t from-white to-secondary ">
-        <h1 className="text-7xl font-bold text-white opacity-0 animate-fade-in duration-2 delay-1">
+        <h1 className="text-7xl font-bold text-white opacity-0 animate-fade-in duration-1 delay-1">
           Lake Time
         </h1>
         <div className="max-w-4xl">
-          <h2 className="m-8 text-center text-lg opacity-0 animate-fade-in duration-2 delay-3">
+          <h2 className="m-8 text-center text-lg opacity-0 animate-fade-in duration-2 delay-2">
             What is Lake Time you ask? Lake Time is not a time, but a state of
             mind — or an absence of time. Eat when you are hungry. Sleep when
             you are tired. Fish, swim, read a great book, and enjoy the sunshine
@@ -35,7 +35,7 @@ const AboutTop = () => {
       </div>
 
       {/* about sections*/}
-      <div class="max-w-3xl mx-auto px-4 opacity-0 animate-fade-in duration-2 delay-5">
+      <div class="max-w-3xl mx-auto px-4 opacity-0 animate-fade-in duration-2 delay-3">
         <div className="flex flex-wrap justify-center mx-6 sm:mx-2 ">
           <div
             className="relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden opacity-0 animate-fade-in duration-1 delay-3"

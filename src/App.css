@@ -94,3 +94,32 @@
 .delay-8 {
   animation-delay: 3.5s;
 }
+
+@keyframes jump {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-jump-1 {
+  animation: jump 0.5s ease-in-out;
+  animation-delay: 1s;
+}
+.animate-jump-2 {
+  animation: jump 0.5s ease-in-out;
+  animation-delay: 2s;
+}
+.animate-jump-3 {
+  animation: jump 0.5s ease-in-out;
+  animation-delay: 3s;
+}
+.animate-jump-4 {
+  animation: jump 0.5s ease-in-out;
+  animation-delay: 4s;
+}
