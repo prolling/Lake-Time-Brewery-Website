@@ -54,7 +54,7 @@ const LearnMore = () => {
   ];
 
   return (
-    <div className=" max-w-screen-lg mx-auto relative py-20 ">
+    <div className=" max-w-screen-lg mx-auto relative py-20 opacity-0 animate-fade-in duration-2 delay-5">
       <h2 className="text-4xl font-bold text-center pb-2">Learn More</h2>
       <div className="">
         <Slider ref={sliderRef} {...settings} className="">
