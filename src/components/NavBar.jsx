@@ -1,14 +1,24 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo2 from "../images/logos/Lake-Time-Logo.png";
 import logo1 from "../images/logos/LTB 1Color Logo FINAL 2018.png";
 import logo from "../images/logos/LTB Name Only FINAL.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState(null);
   const [nav, setNav] = useState(false);
   const [item, setDrop] = useState({ activeLink: null, isOpen: false });
+  const location = useLocation();
+
+  useEffect(() => {
+    const currentLink = links.find((link) => link.link === location.pathname);
+    if (currentLink) {
+      setActiveLink(currentLink.id);
+    } else {
+      setActiveLink(null);
+    }
+  }, [location.pathname]);
 
   const links = [
     {
