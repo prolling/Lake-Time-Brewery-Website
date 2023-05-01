@@ -11,13 +11,20 @@ const AboutTop = () => {
     setSelectedCard(cardName);
   };
 
+  //   const showElement = (name) => {
+  //     var element = document.getElementById(name);
+  //     element.classList.add("opacity-100");
+  //   };
+
   return (
     <div name="about" className="">
       {/* about story*/}
-      <div className="flex flex-col items-center pt-40 p-12 bg-gradient-to-t from-white to-secondary">
-        <h1 className="text-7xl font-bold text-white">Lake Time</h1>
+      <div className="flex flex-col items-center pt-40 p-12 bg-gradient-to-t from-white to-secondary ">
+        <h1 className="text-7xl font-bold text-white opacity-0 animate-fade-in duration-1 delay-1">
+          Lake Time
+        </h1>
         <div className="max-w-4xl">
-          <h2 className="m-8 text-center text-lg">
+          <h2 className="m-8 text-center text-lg opacity-0 animate-fade-in duration-2 delay-2">
             What is Lake Time you ask? Lake Time is not a time, but a state of
             mind — or an absence of time. Eat when you are hungry. Sleep when
             you are tired. Fish, swim, read a great book, and enjoy the sunshine
@@ -28,11 +35,13 @@ const AboutTop = () => {
       </div>
 
       {/* about sections*/}
-      <div class="max-w-3xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto px-4 opacity-0 animate-fade-in duration-2 delay-3">
         <div className="flex flex-wrap justify-center mx-6 sm:mx-2 ">
           <div
-            className="relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden"
-            onClick={() => handleCardClick("sustainCard")}
+            className="hover:scale-105 duration-200 relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden opacity-0 animate-fade-in duration-1 delay-3"
+            onClick={() => {
+              handleCardClick("sustainCard");
+            }}
           >
             <img
               src={sustainImg}
@@ -44,8 +53,10 @@ const AboutTop = () => {
             </div>
           </div>
           <div
-            className="relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden "
-            onClick={() => handleCardClick("startCard")}
+            className="hover:scale-105 duration-200 relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden opacity-0 animate-fade-in duration-1 delay-4"
+            onClick={() => {
+              handleCardClick("startCard");
+            }}
           >
             <img
               src={startImg}
@@ -57,7 +68,7 @@ const AboutTop = () => {
             </div>
           </div>
           <div
-            className="relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden"
+            className="hover:scale-105 duration-200 relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden opacity-0 animate-fade-in duration-1 delay-5"
             onClick={() => handleCardClick("careersCard")}
           >
             <img
@@ -73,65 +84,65 @@ const AboutTop = () => {
       </div>
 
       {selectedCard === "sustainCard" && (
-        <div className="transition-all duration-500 ease-in-out">
-          <div className="flex justify-center p-6 m-12 bg-gray-200 rounded-lg shadow-md">
-            <div className="flex flex-col lg:flex-row items-center">
-              <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
-                <img
-                  src={img1}
-                  alt={
-                    selectedCard === "sustainCard"
-                      ? "sustain text"
-                      : selectedCard === "startCard"
-                      ? "our start text"
-                      : "career text"
-                  }
-                  className="w-full h-auto object-contain rounded-lg shadow-md"
-                />
-              </div>
-              <div className="w-full lg:w-1/2 lg:pl-12 flex flex-col justify-center">
-                <h2 className="text-2xl font-bold mb-4">
-                  {selectedCard === "sustainCard"
-                    ? "Our Practices"
+        <div
+          name="sustainibility"
+          className="flex justify-center p-6 m-12 bg-gray-200 rounded-lg shadow-md"
+        >
+          <div className="flex flex-col lg:flex-row items-center opacity-0 animate-fade-in duration-2">
+            <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
+              <img
+                src={img1}
+                alt={
+                  selectedCard === "sustainCard"
+                    ? "sustain text"
                     : selectedCard === "startCard"
-                    ? "Our Start"
-                    : "Careers"}
-                </h2>
-                <p className=" text-lg leading-relaxed mb-6"></p>
-                <div className="flex flex-col gap-4">
-                  <span>
-                    Lake Time Brewery aspires to be a leader in sustainability
-                    in the craft beer industry by being an environmental steward
-                    throughout the entire brewing process. By thinking and
-                    acting sustainably, we will manage and operate our business
-                    to best serve our customers, reduce the environmental
-                    footprint of our operations, and drive long-term
-                    profitability.
-                  </span>
-                  <ul>
-                    <li className="text-2xl font-bold">
-                      Practices Lake Time follows to promote sustainability: ​
-                    </li>
-                    <li>
-                      Spent grain is transferred to a local farmer to be used
-                      for feeding cattle
-                    </li>
-                    <li>Lighting in facility is 100% LED</li>
-                    <li>Glycol cooling and steam heating systems</li>
-                    <li>
-                      Recycled water utilized in brewing process Aluminum and
-                      carboard recycling programs
-                    </li>
-                  </ul>
-                </div>
+                    ? "our start text"
+                    : "career text"
+                }
+                className="w-full h-auto object-contain rounded-lg shadow-md"
+              />
+            </div>
+            <div className="w-full lg:w-1/2 lg:pl-12 flex flex-col justify-center">
+              <h2 className="text-4xl font-bold">
+                {selectedCard === "sustainCard"
+                  ? "Our Practices"
+                  : selectedCard === "startCard"
+                  ? "Our Start"
+                  : "Careers"}
+              </h2>
+              <p className=" text-lg leading-relaxed mb-6"></p>
+              <div className="flex flex-col gap-4">
+                <span>
+                  Lake Time Brewery aspires to be a leader in sustainability in
+                  the craft beer industry by being an environmental steward
+                  throughout the entire brewing process. By thinking and acting
+                  sustainably, we will manage and operate our business to best
+                  serve our customers, reduce the environmental footprint of our
+                  operations, and drive long-term profitability.
+                </span>
+                <ul>
+                  <li className="text-xl font-bold">
+                    Practices Lake Time follows to promote sustainability:
+                  </li>
+                  <li>
+                    Spent grain is transferred to a local farmer to be used for
+                    feeding cattle
+                  </li>
+                  <li>Lighting in facility is 100% LED</li>
+                  <li>Glycol cooling and steam heating systems</li>
+                  <li>
+                    Recycled water utilized in brewing process Aluminum and
+                    carboard recycling programs
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       )}
       {selectedCard === "startCard" && (
-        <div className="flex justify-center p-6 m-12 bg-gray-200 rounded-lg shadow-m">
-          <div className="flex flex-col lg:flex-row items-center">
+        <div className="flex justify-center p-6 m-12 bg-gray-200 rounded-lg shadow-m ">
+          <div className="flex flex-col lg:flex-row items-center opacity-0 animate-fade-in duration-2">
             <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
               <img
                 src={startImg}
@@ -146,7 +157,7 @@ const AboutTop = () => {
               />
             </div>
             <div className="w-full lg:w-1/2 lg:pl-12 flex flex-col justify-center">
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="text-4xl font-bold">
                 {selectedCard === "sustainCard"
                   ? "Our Practices"
                   : selectedCard === "startCard"
@@ -155,7 +166,7 @@ const AboutTop = () => {
               </h2>
               <p className=" text-lg leading-relaxed mb-6"></p>
               <div className="flex flex-col gap-4">
-                <span>
+                <span className="">
                   Two moves in ten months, a job elimination and raising two
                   pre-teen daughters all led to the birth of Lake Time Brewery.
                   These experiences taught a family to remain positive and
@@ -177,8 +188,8 @@ const AboutTop = () => {
         </div>
       )}
       {selectedCard === "careersCard" && (
-        <div className="flex justify-center p-6 m-12 bg-gray-200 rounded-lg shadow-md">
-          <div className="flex flex-col lg:flex-row items-center">
+        <div className="flex justify-center p-6 m-12 bg-gray-200 rounded-lg shadow-md ">
+          <div className="flex flex-col lg:flex-row items-center opacity-0 animate-fade-in duration-2">
             <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
               <img
                 src={img1}
@@ -193,7 +204,7 @@ const AboutTop = () => {
               />
             </div>
             <div className="w-full lg:w-1/2 lg:pl-12 flex flex-col justify-center">
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="text-4xl font-bold">
                 {selectedCard === "sustainCard"
                   ? "Our Practices"
                   : selectedCard === "startCard"

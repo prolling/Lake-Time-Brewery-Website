@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// TODO: change images 
+// TODO: change images
 import sect1 from "../../images/community_images/brewery_chamber.jpg";
 import sect2 from "../../images/production_images/lots_of_cans.jpg";
-import sect3 from "../../images/taproom_images/outside_cans.jpg"
+import sect3 from "../../images/community_images/brews_on_the_beach.jpg";
 
 const Giving = () => {
   const givingSections = [
@@ -15,7 +15,7 @@ const Giving = () => {
       button: "Our Community",
       img: sect1,
       imgAlt: "Community Service",
-      link: "/about",
+      link: "/about#top",
     },
     {
       index: 2,
@@ -24,13 +24,13 @@ const Giving = () => {
       button: "Our Brewing Process",
       img: sect2,
       imgAlt: "Sustainability",
-      link: "/about",
+      link: "/about#top",
     },
     {
       index: 3,
       title: "Brews on the Beach",
       text: "Join us for our annual Brews on the Beach festival, featuring live music, food trucks, and of course, great craft beer. Funds from Brews on the Beach go towards community projects led by the Clear Lake Rotary Club.",
-      button: "About Lake Time",
+      button: "Brews on the Beach",
       img: sect3,
       imgAlt: "Brews on the Beach",
       link: "https://www.brewsonthebeach.com/tickets",
@@ -56,7 +56,7 @@ const Giving = () => {
               <p className="text-gray-700">{section.text}</p>
               <div className="pt-6">
                 <Link to={section.link}>
-                  <button className="group text-white w-fit px-6 py-3 my-2 mx-auto flex items-center rounded-md bg-secondary hover:cursor-pointer">
+                  <button className="hover:scale-105 duration-100 group text-white w-fit px-6 py-3 my-2 mx-auto flex items-center rounded-md bg-secondary hover:cursor-pointer">
                     {section.button}
                   </button>
                 </Link>
