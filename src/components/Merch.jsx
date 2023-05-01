@@ -88,16 +88,16 @@ const Merch = () => {
               key={index}
               className="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 group"
             >
-              <div className="bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:opacity-75 relative">
+              <div className="group bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:opacity-75 relative">
                 <img
                   src={item.img}
                   alt={item.imgAlt}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover group-hover:opacity-20 duration-500"
                 />
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="text-gray-700">{item.text}</p>
-                  <p className="opacity-0 group-hover:opacity-100 bg-gray-200 rounded-lg py-2 px-4 transition duration-300 absolute top-0 left-0 w-full z-10">
+                  <p className="opacity-0 group-hover:opacity-100 rounded-lg py-2 px-4 transition duration-300 absolute top-12 left-0 w-full z-10">
                     {item.short}
                   </p>
                 </div>
