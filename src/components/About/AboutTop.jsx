@@ -38,7 +38,7 @@ const AboutTop = () => {
       <div class="max-w-3xl mx-auto px-4 opacity-0 animate-fade-in duration-2 delay-3">
         <div className="flex flex-wrap justify-center mx-6 sm:mx-2 ">
           <div
-            className="relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden opacity-0 animate-fade-in duration-1 delay-3"
+            className="hover:scale-105 duration-200 relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden opacity-0 animate-fade-in duration-1 delay-3"
             onClick={() => {
               handleCardClick("sustainCard");
             }}
@@ -53,7 +53,7 @@ const AboutTop = () => {
             </div>
           </div>
           <div
-            className="relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden opacity-0 animate-fade-in duration-1 delay-4"
+            className="hover:scale-105 duration-200 relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden opacity-0 animate-fade-in duration-1 delay-4"
             onClick={() => {
               handleCardClick("startCard");
             }}
@@ -68,7 +68,7 @@ const AboutTop = () => {
             </div>
           </div>
           <div
-            className="relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden opacity-0 animate-fade-in duration-1 delay-5"
+            className="hover:scale-105 duration-200 relative w-48 h-48  mx-2 my-2 sm:mx-4 sm:my-4 rounded-full hover:cursor-pointer overflow-hidden opacity-0 animate-fade-in duration-1 delay-5"
             onClick={() => handleCardClick("careersCard")}
           >
             <img
@@ -226,11 +226,6 @@ const AboutTop = () => {
           </div>
         </div>
       )}
-
-      {/* <button onClick={() => showElement("myElement")}>Show element</button>
-      <div id="myElement" class="opacity-0 duration-500">
-        <p className="text-black">here is content</p>
-      </div> */}
     </div>
   );
 };
