@@ -103,7 +103,7 @@ const AboutTop = () => {
               />
             </div>
             <div className="w-full lg:w-1/2 lg:pl-12 flex flex-col justify-center">
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="text-4xl font-bold">
                 {selectedCard === "sustainCard"
                   ? "Our Practices"
                   : selectedCard === "startCard"
@@ -121,7 +121,7 @@ const AboutTop = () => {
                   operations, and drive long-term profitability.
                 </span>
                 <ul>
-                  <li className="text-2xl font-bold">
+                  <li className="text-xl font-bold">
                     Practices Lake Time follows to promote sustainability:
                   </li>
                   <li>
@@ -157,7 +157,7 @@ const AboutTop = () => {
               />
             </div>
             <div className="w-full lg:w-1/2 lg:pl-12 flex flex-col justify-center">
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="text-4xl font-bold">
                 {selectedCard === "sustainCard"
                   ? "Our Practices"
                   : selectedCard === "startCard"
@@ -204,7 +204,7 @@ const AboutTop = () => {
               />
             </div>
             <div className="w-full lg:w-1/2 lg:pl-12 flex flex-col justify-center">
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="text-4xl font-bold">
                 {selectedCard === "sustainCard"
                   ? "Our Practices"
                   : selectedCard === "startCard"

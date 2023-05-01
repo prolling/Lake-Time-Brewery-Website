@@ -13,76 +13,137 @@ const Merch = () => {
   const merchItems = [
     {
       title: "Embroidered Cap",
-      text: "this is text for the embroidered cap",
       img: cap,
-      imgAlt: "img1",
+      short: "this is a short description",
+      long: "this is a long description",
     },
     {
       title: "Pint Glass Gift Pack",
-      text: "this is text is for the pint glass gift pack",
       img: gift_pack_pint,
-      imgAlt: "img2",
+      short: "this is a short description",
+      long: "this is a long description",
     },
     {
       title: "Lake Time Growler",
-      text: "this is text for lake time growler",
       img: lake_time_growler,
-      imgAlt: "img3",
+      short: "this is a short description",
+      long: "this is a long description",
     },
     {
-      title: "t-shits",
-      text: "text for tshirts",
+      title: "T-Shirts",
       img: t_shirts,
-      imgAlt: "img4",
+      short: "this is a short description",
+      long: "this is a long description",
     },
     {
       title: "Pint Glassware",
-      text: "text for pint glassware",
       img: pint_glassware,
-      imgAlt: "img5",
+      short: "this is a short description",
+      long: "this is a long description",
     },
     {
       title: "Single Pint Glass",
-      text: "text for single pint glass",
       img: single_gift_pint,
-      imgAlt: "img6",
+      short: "this is a short description",
+      long: "this is a long description",
     },
     {
       title: "Lake Time Sweatshirt",
-      text: "text for sweatshirt",
       img: sweatshirt,
-      imgAlt: "img7",
+      short: "this is a short description",
+      long: "this is a long description",
     },
     {
       title: "Tulip Samplers",
-      text: "text for tulips",
       img: tulips_samplers,
-      imgAlt: "img8",
+      short: "this is a short description",
+      long: "this is a long description",
     },
     {
       title: "Beanie",
-      text: "text for beanie",
       img: beanie,
-      imgAlt: "img9",
+      short: "this is a short description",
+      long: "this is a long description",
     },
   ];
+
   return (
-    <div name="about" className="pt-24 bg-slate-400">
-      <div className="flex flex-wrap justify-center items-center gap-4">
-        {merchItems.map((item, index) => (
-          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <img src={item.img} alt={item.imgAlt} className="w-full" />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-700">{item.text}</p>
+    <div className="pt-24 bg-gradient-to-b from-secondary to white via-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-extrabold text-white sm:text-4xl text-center mb-8">
+          Our Apparel & Merchandise
+        </h2>
+        <div className="max-w-4xl mx-auto text-center mb-4">
+          <h2 className=" text-lg">
+            TAKE A LITTLE LAKE TIME HOME! Commemorate your Lake Time experience
+            with our ever changing selection of Lake Time merchandise – apparel,
+            glassware, koozies & much more. Stop in and check it out!
+          </h2>
+        </div>
+
+        <h3 className="text-xl font-extrabold text-white sm:text-xl text-center"></h3>
+        <div className="flex flex-wrap justify-center items-center gap-4 pb-20">
+          {merchItems.map((item, index) => (
+            <div
+              key={index}
+              className="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 group"
+            >
+              <div className="bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:opacity-75 relative">
+                <img
+                  src={item.img}
+                  alt={item.imgAlt}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-gray-700">{item.text}</p>
+                  <p className="opacity-0 group-hover:opacity-100 bg-gray-200 rounded-lg py-2 px-4 transition duration-300 absolute top-0 left-0 w-full z-10">
+                    {item.short}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
+
+  // return (
+  //   <div className="pt-24 bg-gradient-to-b from-secondary to white via-white">
+  //     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+  //       <h2 className="text-3xl font-extrabold text-white sm:text-4xl text-center mb-8">
+  //         Our Apparel & Merchandise
+  //       </h2>
+  //       <div className="max-w-4xl mx-auto text-center mb-4">
+  //         <h2 className=" text-lg">
+  //           TAKE A LITTLE LAKE TIME HOME! Commemorate your Lake Time experience
+  //           with our ever changing selection of Lake Time merchandise – apparel,
+  //           glassware, koozies & much more. Stop in and check it out!
+  //         </h2>
+  //       </div>
+
+  //       <h3 className="text-xl font-extrabold text-white sm:text-xl text-center"></h3>
+  //       <div className="flex flex-wrap justify-center items-center gap-4 pb-20">
+  //         {merchItems.map((item, index) => (
+  //           <div key={index} className="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+  //             <div className="bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:opacity-75">
+  //               <img
+  //                 src={item.img}
+  //                 alt={item.imgAlt}
+  //                 className="w-full h-48 object-cover"
+  //               />
+  //               <div className="p-4 text-center">
+  //                 <h3 className="text-lg font-semibold">{item.title}</h3>
+  //                 <p className="text-gray-700">{item.text}</p>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         ))}
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default Merch;
