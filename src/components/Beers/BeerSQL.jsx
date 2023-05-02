@@ -9,13 +9,15 @@ function BeerSQL() {
   const [currentPage, setCurrentPage] = useState(1);
   const [beersPerPage] = useState(10);
   const [inputValue, setInputValue] = useState("");
+  // For hops checkbox
+  // const hops = ["citra"];
 
   useEffect(() => {
     const fetchBeers = async () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:3010/beers?search=${search}&sortBy=rating&order=DESC&page=${currentPage}&limit=${beersPerPage}`
+          `http://localhost:3010/beers?search=${search}&sortBy=rating&order=DESC`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -45,7 +47,8 @@ function BeerSQL() {
     setCurrentPage(newPage);
   };
 
-  // Your existing render code here
+  // For hops checkbox
+
   if (loading) {
     return <div className="p-24">Loading...</div>;
   }
