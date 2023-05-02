@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import article1 from "../../images/community_images/50fastest.jpg";
 import article2 from "../../images/community_images/lastPint.jpg";
+import article3 from "../../images/taproom_images/peanut-butter-porter.jpg";
+import article4 from "../../images/community_images/brews_on_the_beach.jpg";
 
 const LearnMore = () => {
   // reference to the slider
@@ -41,30 +43,36 @@ const LearnMore = () => {
     },
     {
       name: "Brewer Magazine, Jan/Feb 2016",
-      image: article2,
+      image: article2, 
     },
     {
-      name: "Clear Lake IPA",
-      image: article1,
+      name: "Great American Beer Festival Bronze Medal",
+      image: article3,
+      link: "https://www.desmoinesregister.com/story/entertainment/2022/10/11/clear-lake-brewery-wins-bronze-at-great-american-beer-festival/69554734007/",
     },
     {
-      name: "Cabana Boy",
-      image: article1,
+      name: "Brews on the Beach",
+      image: article4,
+      link: "https://globegazette.com/announcements/brews-on-the-beach-to-make-return-this-summer/article_8993218c-7012-54b7-a2a9-8214fd73e00e.html",
     },
   ];
 
   return (
-    <div className=" max-w-screen-lg mx-auto relative py-20 opacity-0 animate-fade-in duration-2 delay-5">
+    <div className="max-w-screen-lg mx-auto relative py-20 opacity-0 animate-fade-in duration-2 delay-5">
       <h2 className="text-4xl font-bold text-center pb-8">Learn More</h2>
       <div className="">
         <Slider ref={sliderRef} {...settings} className="w-auto px-20">
           {article.map((article, index) => (
             <div
               key={index}
-              className="p-4 shadow-md shadow-gray-800 border-2 border-black"
+              className="p-4 mx-2"
             >
-              <a href={article.link} target="blank">
-                <img src={article.image} alt={article.name} />
+              <a href={article.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={article.image}
+                  alt={article.name}
+                  className="object-contain h-48 w-full"
+                />
               </a>
             </div>
           ))}
