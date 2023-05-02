@@ -1,7 +1,5 @@
 import { React, useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo2 from "../images/logos/Lake-Time-Logo.png";
-import logo1 from "../images/logos/LTB 1Color Logo FINAL 2018.png";
 import logo from "../images/logos/LTB Name Only FINAL.png";
 import { Link, useLocation } from "react-router-dom";
 
