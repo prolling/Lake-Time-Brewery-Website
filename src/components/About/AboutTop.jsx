@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import img2 from "../../images/production_images/large_keg.JPG"
 import img1 from "../../images/community_images/careers_brewery.jpg";
 import sustainImg from "../../images/production_images/brewery_equitment.JPG";
 import startImg from "../../images/community_images/brewery_chamber.jpg";
@@ -91,7 +92,7 @@ const AboutTop = () => {
           <div className="flex flex-col lg:flex-row items-center opacity-0 animate-fade-in duration-2">
             <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
               <img
-                src={img1}
+                src={img2}
                 alt={
                   selectedCard === "sustainCard"
                     ? "sustain text"
@@ -125,13 +126,13 @@ const AboutTop = () => {
                     Practices Lake Time follows to promote sustainability:
                   </li>
                   <li>
-                    Spent grain is transferred to a local farmer to be used for
-                    feeding cattle
+                    - Spent grain is transferred to a local farmer to be used
+                    for feeding cattle
                   </li>
-                  <li>Lighting in facility is 100% LED</li>
-                  <li>Glycol cooling and steam heating systems</li>
+                  <li>- Lighting in facility is 100% LED</li>
+                  <li>- Glycol cooling and steam heating systems</li>
                   <li>
-                    Recycled water utilized in brewing process Aluminum and
+                    - Recycled water utilized in brewing process Aluminum and
                     carboard recycling programs
                   </li>
                 </ul>
@@ -213,13 +214,13 @@ const AboutTop = () => {
               </h2>
               <p className=" text-lg leading-relaxed mb-6"></p>
               <>
-                <span className="font-bold">
-                  3 Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                </span>
+                <span className="font-bold">Join our team! </span>
                 <span>
-                  Aperiam magnam minus ad nulla impedit ea reiciendis, autem
-                  voluptatem natus accusantium harum laborum, eius excepturi
-                  blanditiis placeat odit alias vel necessitatibus.
+                  We are looking for enthusiastic, hard-working, and dedicated
+                  individuals to join our team. If you are interested in working
+                  at Lake Time Brewery, please send us your resume. We're
+                  currently hiring servers for our taproom, but if you believe
+                  you have something else to offer, we'd love to hear from you!
                 </span>
               </>
             </div>
