@@ -14,56 +14,59 @@ const Merch = () => {
     {
       title: "Embroidered Cap",
       img: cap,
-      short: "this is a short description",
-      long: "this is a long description",
+      short: "Our one-size fits most cap is comes in multiple colors!",
+      long: "Our Lake Time Brewery cap is the perfect accessory for any beer lover. Made from high-quality materials, this stylish cap features our brewery's logo and a classic design that's perfect for any occasion. It's a great way to show your love for craft beer and our brewery, whether you're visiting us in person or enjoying a beer at home. With an adjustable strap, it's also a comfortable and versatile accessory that you can wear all day long.",
     },
     {
       title: "Pint Glass Gift Pack",
       img: gift_pack_pint,
-      short: "this is a short description",
-      long: "this is a long description",
+      short:
+        "Make gift giving easy this holiday season and give the gift of our Lake Time pint glasses!",
+      long: "Our Lake Time Brewery gift pack pint set is the perfect gift for any beer lover. This set includes two pint glasses, each featuring our brewery's logo and a classic design that's perfect for any occasion. It's a great way to share your love of craft beer with a friend or family member, or to commemorate a visit to the brewery.",
     },
     {
       title: "Lake Time Growler",
       img: lake_time_growler,
-      short: "this is a short description",
-      long: "this is a long description",
+      short:
+        "Enjoy your favorite Lake Time Brewery beer on the go with our growler with travel case.",
+      long: "Our Lake Time Brewery growler w/ travel case is the perfect choice for taking your favorite beer on the go. Made from high-quality glass, this 64oz growler features our brewery's logo and a secure cap for preventing spills. The set also includes a convenient travel case for easy transport. It's a great way to enjoy your favorite beer wherever you go, whether it's to the beach, on a hike, or to a friend's house.",
     },
     {
       title: "T-Shirts",
       img: t_shirts,
-      short: "this is a short description",
-      long: "this is a long description",
+      short: "Show off your love for Lake Time with our t-shirt.",
+      long: "Whether you're a craft beer enthusiast or just looking for a comfortable and stylish shirt, our Lake Time Brewery men's shirt is the perfect choice. Made from high-quality materials, this shirt is soft, breathable, and features our brewery's logo on the front. It's perfect for wearing to the brewery or for any casual occasion, and is sure to become a favorite among beer lovers.",
     },
     {
       title: "Pint Glassware",
       img: pint_glassware,
-      short: "this is a short description",
-      long: "this is a long description",
+      short: "Emjoy your Lake Time craft beer at home with our pint glasswear.",
+      long: "Our Lake Time Brewery pint glassware is the perfect way to enjoy your favorite beer in style. Made from high-quality glass, these pint glasses feature our brewery's logo and a classic design that's perfect for any occasion. Whether you're sipping a cold one at the brewery or enjoying a beer at home, these glasses are sure to become a go-to in your beer glass collection.",
     },
-    {
-      title: "Single Pint Glass",
-      img: single_gift_pint,
-      short: "this is a short description",
-      long: "this is a long description",
-    },
+    // {
+    //   title: "Single Pint Glass",
+    //   img: single_gift_pint,
+    //   short: "this is a short description",
+    //   long: "this is a long description",
+    // },
     {
       title: "Lake Time Sweatshirt",
       img: sweatshirt,
-      short: "this is a short description",
-      long: "this is a long description",
+      short: "Stay warm this winter with our Lake Time sweatshirts!",
+      long: "Our Lake Time Brewery sweatshirt is the perfect choice for staying cozy and stylish in cooler weather. Made from high-quality materials, this sweatshirt features our brewery's logo on the front and a comfortable design that's perfect for relaxing at home or hanging out at the brewery. It's sure to become a favorite among beer lovers.",
     },
     {
       title: "Tulip Samplers",
       img: tulips_samplers,
-      short: "this is a short description",
-      long: "this is a long description",
+      short:
+        "Elevate your beer-drinking experience with our Lake Time Brewery tulip glassware.",
+      long: "Our Lake Time Brewery tulip glassware is the perfect choice for elevating your beer-drinking experience. Made from high-quality glass, these glasses feature a unique tulip-shaped design that enhances the aroma and flavor of your beer. The front of the glass also features our brewery's logo, making it a stylish addition to any beer enthusiast's collection. Whether you're enjoying a Belgian ale or a hoppy IPA, these tulip glasses are sure to enhance your drinking experience.",
     },
     {
-      title: "Beanie",
+      title: "Stocking Hat",
       img: beanie,
-      short: "this is a short description",
-      long: "this is a long description",
+      short: "Keep warm with our Lake Time stocking hat!",
+      long: "Our Lake Time Brewery men's stocking hat is the perfect choice for keeping warm and stylish in cold weather. Made from high-quality materials, this hat features our brewery's logo and a comfortable design that's perfect for any outdoor activity. Whether you're hitting the slopes or just running errands, this hat is sure to become a go-to in your winter wardrobe.",
     },
   ];
 
@@ -97,7 +100,7 @@ const Merch = () => {
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="text-gray-700">{item.text}</p>
-                  <p className="opacity-0 group-hover:opacity-100 rounded-lg py-2 px-4 transition duration-300 absolute top-12 left-0 w-full z-10">
+                  <p className=" opacity-0 group-hover:opacity-100 rounded-lg py-2 px-4 transition duration-300 absolute top-12 left-0 w-full z-10">
                     {item.short}
                   </p>
                 </div>
