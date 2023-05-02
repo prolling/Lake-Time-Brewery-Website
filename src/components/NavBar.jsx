@@ -28,45 +28,45 @@ const NavBar = () => {
       id: 2,
       link: "/about",
       name: "About",
-      sublinks: [
-        {
-          id: 1,
-          link: "/sustainability",
-          name: "Sustainability",
-        },
-        {
-          id: 2,
-          link: "/careers",
-          name: "Careers",
-        },
-        {
-          id: 3,
-          link: "/news",
-          name: "News",
-        },
-      ],
+      // sublinks: [
+      //   {
+      //     id: 1,
+      //     link: "/sustainability",
+      //     name: "Sustainability",
+      //   },
+      //   {
+      //     id: 2,
+      //     link: "/careers",
+      //     name: "Careers",
+      //   },
+      //   {
+      //     id: 3,
+      //     link: "/news",
+      //     name: "News",
+      //   },
+      // ],
     },
     {
       id: 3,
       link: "/beers",
       name: "Beers",
-      sublinks: [
-        {
-          id: 1,
-          link: "/ourbeers",
-          name: "Our Beers",
-        },
-        {
-          id: 2,
-          link: "/distribution",
-          name: "Distribution",
-        },
-        {
-          id: 3,
-          link: "/beerfinder",
-          name: "Beer Finder",
-        },
-      ],
+      // sublinks: [
+      //   {
+      //     id: 1,
+      //     link: "/ourbeers",
+      //     name: "Our Beers",
+      //   },
+      //   {
+      //     id: 2,
+      //     link: "/distribution",
+      //     name: "Distribution",
+      //   },
+      //   {
+      //     id: 3,
+      //     link: "/beerfinder",
+      //     name: "Beer Finder",
+      //   },
+      // ],
     },
     {
       id: 4,
