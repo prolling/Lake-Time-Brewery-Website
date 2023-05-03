@@ -9,15 +9,13 @@ function BeerSQL() {
   const [currentPage, setCurrentPage] = useState(1);
   const [beersPerPage] = useState(10);
   const [inputValue, setInputValue] = useState("");
-  // For hops checkbox
-  // const hops = ["citra"];
 
   useEffect(() => {
     const fetchBeers = async () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:3010/beers?search=${search}&sortBy=rating&order=DESC`
+          `http://localhost:3010/beers?search=${search}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
