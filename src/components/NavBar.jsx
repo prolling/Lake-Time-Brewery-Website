@@ -83,6 +83,11 @@ const NavBar = () => {
       link: "/contact",
       name: "Contact",
     },
+    {
+      id: 7,
+      link: "/team",
+      name: "Team",
+    }
   ];
 
   return (
