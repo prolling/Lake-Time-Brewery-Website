@@ -9,13 +9,14 @@ function BeerSQL() {
   const [currentPage, setCurrentPage] = useState(1);
   const [beersPerPage] = useState(10);
   const [inputValue, setInputValue] = useState("");
+  const [selectedHops, setSelectedHops] = useState("");
 
   useEffect(() => {
     const fetchBeers = async () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:3010/beers?search=${search}`
+          `http://localhost:3010/beers?search=${search}&hops=${selectedHops}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -31,7 +32,7 @@ function BeerSQL() {
     };
 
     fetchBeers();
-  }, [search, currentPage, beersPerPage]);
+  }, [search, selectedHops]);
 
   const handleSearch = (e) => {
     setInputValue(e.target.value);
@@ -46,6 +47,18 @@ function BeerSQL() {
   };
 
   // For hops checkbox
+  const handleHopChange = (e) => {
+    const hop = e.target.value;
+    if (selectedHops.includes(hop)) {
+      // If hop is already selected, remove it from the array
+      setSelectedHops(
+        selectedHops.filter((selectedHop) => selectedHop !== hop)
+      );
+    } else {
+      // If hop is not selected, add it to the array
+      setSelectedHops([...selectedHops, hop]);
+    }
+  };
 
   if (loading) {
     return <div className="p-24">Loading...</div>;
@@ -68,6 +81,59 @@ function BeerSQL() {
         onChange={handleSearch}
       />
       <button onClick={submitSearch}>Search</button>
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            name="Amarillo"
+            value="Amarillo"
+            checked={selectedHops.includes("Amarillo")}
+            onChange={handleHopChange}
+          />
+          Amarillo
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="Northern Brewer"
+            value="Northern Brewer"
+            checked={selectedHops.includes("Northern Brewer")}
+            onChange={handleHopChange}
+          />
+          Northern Brewer
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="Centennial"
+            value="Centennial"
+            checked={selectedHops.includes("Centennial")}
+            onChange={handleHopChange}
+          />
+          Centennial
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="Liberty"
+            value="Liberty"
+            checked={selectedHops.includes("Liberty")}
+            onChange={handleHopChange}
+          />
+          Liberty
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="Citra"
+            value="Citra"
+            checked={selectedHops.includes("Citra")}
+            onChange={handleHopChange}
+          />
+          Citra
+        </label>
+        {/* Add more checkboxes for each hop here */}
+      </div>
 
       <h1 className="font-bold text-7xl">List of Beers</h1>
 
