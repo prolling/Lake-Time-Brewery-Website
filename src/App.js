@@ -14,7 +14,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Events from "./components/Events";
 import Merch from "./components/Merch";
-import Beers from "./components/Beers";
+import Beers from "./components/Beers/Beers";
 import Footer from "./components/Footer";
 
 function App() {
