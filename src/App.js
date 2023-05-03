@@ -15,6 +15,7 @@ import Contact from "./components/Contact/Contact";
 import Events from "./components/Events";
 import Merch from "./components/Merch";
 import Beers from "./components/Beers/Beers";
+import Team from "./components/Team"
 import Footer from "./components/Footer";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/merch" element={<Merch />} />
           <Route path="/beers" element={<Beers />} />
+          <Route path="/team" element={<Team />} />
         </Routes>
 
         <Footer />
