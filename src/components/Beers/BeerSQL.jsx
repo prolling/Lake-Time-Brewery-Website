@@ -10,6 +10,9 @@ function BeerSQL() {
   const [beersPerPage] = useState(10);
   const [inputValue, setInputValue] = useState("");
   const [selectedHops, setSelectedHops] = useState("");
+  const [abv, setAbv] = useState(3);
+
+  const [selectedIBURange, setSelectedIBURange] = useState([0, 70]);
 
   useEffect(() => {
     const fetchBeers = async () => {
@@ -32,7 +35,7 @@ function BeerSQL() {
     };
 
     fetchBeers();
-  }, [search, selectedHops, currentPage, beersPerPage]);
+  }, [search, selectedHops, currentPage, beersPerPage, abv]);
 
   const handleSearch = (e) => {
     setInputValue(e.target.value);
@@ -45,6 +48,10 @@ function BeerSQL() {
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
+
+  function handleAbvChange(event) {
+    setAbv(event.target.value);
+  }
 
   // For hops checkbox
   const handleHopChange = (e) => {
@@ -132,13 +139,34 @@ function BeerSQL() {
           />
           Citra
         </label>
+        {/* Add more checkboxes for each hop here */}
       </div>
 
-      <h1 className="font-bold text-7xl">Our Beers</h1>
+      <div className="flex flex-col text-left border-2 border-black">
+        <h2 className="font-bold text-2xl">ABV</h2>
+        <div>
+          <label htmlFor="my-range">Choose a value:</label>
+          <input
+            type="range"
+            id="my-range"
+            name="my-range"
+            min="3"
+            max="15"
+            step="0.1"
+            value={abv}
+            onChange={handleAbvChange}
+          />
+          <div>Selected ABV: {abv}%</div>
+        </div>
+      </div>
 
       <div className="flex flex-wrap justify-center items-center">
         {beers.map((beer) => (
           <BeerCard key={beer.id} beer={beer} />
+          // <div className="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 group">
+          //   <div key={beer.id}>{beer.name}</div>
+          //   <img src={beer.img} alt={beer.name}></img>
+          // </div>
         ))}
       </div>
 
