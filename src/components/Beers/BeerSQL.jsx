@@ -19,7 +19,7 @@ function BeerSQL() {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:3010/beers?search=${search}&hops=${selectedHops}&page=${currentPage}&limit=${beersPerPage}`
+          `http://localhost:3010/beers?search=${search}&hops=${selectedHops}&page=${currentPage}&limit=${beersPerPage}&abv=${abv}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
