@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import StarRating from "./StarRating";
 
-function BeerDetails({ beer, onClose }) {
+function BeerDetails({ beer: initialBeer, onClose }) {
+  console.log("initialBeer:", initialBeer);
+  const [beer, setBeer] = useState(initialBeer);
+  console.log("beer:", beer);
+  console.log("beer.ID:", beer.ID);
+
   // make it so when you click on the outside of the modal, it closes
   const handleClickOutside = (event) => {
     event.stopPropagation();
@@ -34,6 +39,14 @@ function BeerDetails({ beer, onClose }) {
     );
   };
 
+  async function handleRatingUpdate(updatedBeer) {
+    // Update the beer's rating in the state
+    if (updatedBeer) {
+      setBeer({ ...beer, rating: updatedBeer.rating });
+    }
+    console.log("updatedBeer:", updatedBeer);
+  }
+
   return (
     <div
       className="fixed z-50 inset-0 bg-black bg-opacity-50 flex items-center justify-center"
@@ -62,11 +75,9 @@ function BeerDetails({ beer, onClose }) {
           {getValue("Hops", beer.hops)}
           {getValue("Malts", beer.malts)}
           <StarRating
+            beerId={beer.ID}
             rating={beer.rating}
-            onUpdate={(newRating) => {
-              // Update the rating in the database here
-              console.log("New rating: ", newRating);
-            }}
+            onUpdate={(updatedBeer) => handleRatingUpdate(updatedBeer.rating)}
           />
         </div>
       </div>
