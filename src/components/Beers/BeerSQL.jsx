@@ -16,7 +16,7 @@ function BeerSQL() {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:3010/beers?search=${search}&hops=${selectedHops}`
+          `http://localhost:3010/beers?search=${search}&hops=${selectedHops}&page=${currentPage}&limit=${beersPerPage}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -32,7 +32,7 @@ function BeerSQL() {
     };
 
     fetchBeers();
-  }, [search, selectedHops]);
+  }, [search, selectedHops, currentPage, beersPerPage]);
 
   const handleSearch = (e) => {
     setInputValue(e.target.value);
@@ -132,10 +132,9 @@ function BeerSQL() {
           />
           Citra
         </label>
-        {/* Add more checkboxes for each hop here */}
       </div>
 
-      <h1 className="font-bold text-7xl">List of Beers</h1>
+      <h1 className="font-bold text-7xl">Our Beers</h1>
 
       <div className="flex flex-wrap justify-center items-center">
         {beers.map((beer) => (

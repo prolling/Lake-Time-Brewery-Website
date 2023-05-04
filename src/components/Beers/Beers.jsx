@@ -6,9 +6,9 @@ import BeersTesting from "./BeersTesting";
 const Beers = () => {
   return (
     <div>
-      <div className="pt-24">
+      {/* <div className="pt-24">
         <BeersTesting />
-      </div>
+      </div> */}
       {/* <BeersMain /> */}
       <BeerSQL />
     </div>
