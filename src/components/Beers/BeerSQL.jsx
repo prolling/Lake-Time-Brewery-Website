@@ -8,7 +8,7 @@ function BeerSQL() {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [beersPerPage] = useState(10);
+  const [beersPerPage, setBeersPerPage] = useState(12);
   const [inputValue, setInputValue] = useState("");
   const [selectedHops, setSelectedHops] = useState("");
   const [abv, setAbv] = useState(11.5);
@@ -52,6 +52,23 @@ function BeerSQL() {
     setCurrentPage(1);
     setInputValue("");
   };
+
+  const updateBeersPerPage = () => {
+    if (window.innerWidth <= 768) {
+      setBeersPerPage(6);
+    } else {
+      setBeersPerPage(12);
+    }
+  };
+
+  useEffect(() => {
+    updateBeersPerPage();
+    window.addEventListener("resize", updateBeersPerPage);
+
+    return () => {
+      window.removeEventListener("resize", updateBeersPerPage);
+    };
+  }, []);
 
   const handleSearch = (e) => {
     setInputValue(e.target.value);
@@ -114,10 +131,10 @@ function BeerSQL() {
   if (!beers.length) {
     return (
       <div>
-        <div className="p-24">No results.</div>
-        <div className="">
+        <div className="flex flex-col items-center p-24 md:p-24">
+          <div className="text-lg font-semibold mb-6">No results.</div>
           <button
-            className="group w-fit text-white px-6 py-3 my-2 mx-auto flex items-center justify-center rounded-md bg-secondary hover:cursor-pointer hover:scale-105 duration-100 animate-jump-3"
+            className="group w-fit text-white px-6 py-3 my-2 mx-auto flex items-center justify-center rounded-md bg-secondary hover:cursor-pointer hover:scale-105 duration-100"
             onClick={resetBeers}
           >
             Return to all Beers
@@ -128,93 +145,70 @@ function BeerSQL() {
   }
 
   return (
-    <div className="p-24 text-center">
-      <div>
-        <h1 className="text-7xl font-bold animate-fade-in duration-1 delay-1">
-          Our Goddamn Beers
-        </h1>
-      </div>
-      <div className="flex">
-        <div className="flex flex-col">
-          <div className="border-2 border-black p-4">
-            <div name="search">
+    <div className="p-24 text-center md:p-24">
+      <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col ">
+          <div className="border-2 border-gray-200 rounded-md p-4">
+            {/* Search Beers */}
+            <div className="mb-4 flex md:flex-row flex-col" name="search">
               <input
                 type="text"
                 placeholder="Search beers..."
                 value={inputValue}
                 onChange={handleSearch}
+                className="md:w-auto md:mr-2 border-2 border-gray-300 rounded-md p-2 mr-2"
               />
 
-              <button className="bg-blue-400 rounded-md" onClick={submitSearch}>
+              <button
+                className="md:mt-0 md:w-auto bg-secondary text-white rounded-md p-2"
+                onClick={submitSearch}
+              >
                 Search
               </button>
             </div>
-            <div>
+
+            {/* Reset Filters */}
+            <div className="mb-4">
               <button
-                className="group w-fit text-white px-6 py-3 my-2 mx-auto flex items-center justify-center rounded-md bg-secondary hover:cursor-pointer hover:scale-105 duration-100"
+                className="group w-fit text-white px-6 py-3 flex items-center justify-center rounded-md bg-secondary hover:cursor-pointer hover:scale-105 duration-100"
                 onClick={resetBeers}
               >
                 Reset Filters
               </button>
             </div>
-            <div name="hops box">
-              <label>
-                <input
-                  type="checkbox"
-                  name="Amarillo"
-                  value="Amarillo"
-                  checked={selectedHops.includes("Amarillo")}
-                  onChange={handleHopChange}
-                />
-                Amarillo
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="Northern Brewer"
-                  value="Northern Brewer"
-                  checked={selectedHops.includes("Northern Brewer")}
-                  onChange={handleHopChange}
-                />
-                Northern Brewer
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="Centennial"
-                  value="Centennial"
-                  checked={selectedHops.includes("Centennial")}
-                  onChange={handleHopChange}
-                />
-                Centennial
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="Liberty"
-                  value="Liberty"
-                  checked={selectedHops.includes("Liberty")}
-                  onChange={handleHopChange}
-                />
-                Liberty
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="Citra"
-                  value="Citra"
-                  checked={selectedHops.includes("Citra")}
-                  onChange={handleHopChange}
-                />
-                Citra
-              </label>
-              {/* Add more checkboxes for each hop here */}
+
+            {/* Hops Selection */}
+            <div className="mb-4 text-left" name="hops box">
+              <h3 className="font-semibold text-lg mb-2">Hops</h3>
+              {/* List of hops */}
+              {[
+                "Amarillo",
+                "Northern Brewer",
+                "Centennial",
+                "Liberty",
+                "Citra",
+              ].map((hop) => (
+                <label key={hop} className="block">
+                  <input
+                    type="checkbox"
+                    name={hop}
+                    value={hop}
+                    checked={selectedHops.includes(hop)}
+                    onChange={handleHopChange}
+                  />
+                  {hop}
+                </label>
+              ))}
             </div>
-            <div name="abv slider">
-              <div className="flex flex-col text-left border-2 border-black">
-                <h2 className="font-bold text-2xl">ABV</h2>
+
+            {/* ABV Slider */}
+            <div className="mb-4" name="abv slider">
+              <div className="flex flex-col text-left border-2 rounded-md p-4">
+                <h2 className="font-bold text-2xl mb-2">ABV</h2>
                 <div>
-                  <label htmlFor="my-range">Choose a value:</label>
+                  <label htmlFor="my-range" className="mb-2">
+                    Choose a value:
+                  </label>
                   <input
                     type="range"
                     id="my-range"
@@ -225,51 +219,58 @@ function BeerSQL() {
                     value={tempAbv}
                     onChange={handleAbvChange}
                     onMouseUp={submitAbvSearch}
+                    className="mb-2"
                   />
-
                   <div> ABV up to: {abv}%</div>
                 </div>
               </div>
-            </div>
 
-            <div name="IBU slider">
-              <div className="flex flex-col text-left border-2 border-black">
-                <h2 className="font-bold text-2xl">IBU</h2>
-                <div>
-                  <label htmlFor="my-range">Choose a value:</label>
-                  <input
-                    type="range"
-                    id="my-range"
-                    name="my-range"
-                    min="0"
-                    max="70" //68 is highest in datbase
-                    step="1"
-                    value={tempIbu}
-                    onChange={handleIbuChange}
-                    onMouseUp={submitIbuSearch}
-                  />
-
-                  <div>Selected IBU: {ibu}</div>
+              {/* IBU Slider */}
+              <div className="mb-4" name="IBU slider">
+                <div className="flex flex-col text-left border-2 rounded-md p-4">
+                  <h2 className="font-bold text-2xl mb-2">IBU</h2>
+                  <div>
+                    <label htmlFor="my-range" className="mb-2">
+                      Choose a value:
+                    </label>
+                    <input
+                      type="range"
+                      id="my-range"
+                      name="my-range"
+                      min="0"
+                      max="70" //68 is highest in datbase
+                      step="1"
+                      value={tempIbu}
+                      onChange={handleIbuChange}
+                      onMouseUp={submitIbuSearch}
+                      className="mb-2"
+                    />
+                    <div>Selected IBU: {ibu}</div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div name="categ">
-              <select
-                name="catagories"
-                onChange={(e) => setCategory(e.target.value)}
-              >
-                <option value="">All</option>
-                <option value="Ale">Ale</option>
-                <option value="IPA">IPA</option>
-                <option value="Lager">Lager</option>
-                <option value="Porter">Porter</option>
-                <option value="Sour">Sour</option>
-                <option value="Stout">Stout</option>
-              </select>
+              {/* Category Selection */}
+              <div className="mb-4" name="categ">
+                <select
+                  name="catagories"
+                  onChange={(e) => setCategory(e.target.value)}
+                  className="border-2 border-gray-300 rounded-md p-2"
+                >
+                  <option value="">All Types</option>
+                  <option value="Ale">Ale</option>
+                  <option value="IPA">IPA</option>
+                  <option value="Lager">Lager</option>
+                  <option value="Porter">Porter</option>
+                  <option value="Sour">Sour</option>
+                  <option value="Stout">Stout</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Beer Cards */}
         <div className="flex flex-wrap justify-center items-center">
           {beers.map((beer) => (
             <BeerCard key={beer.id} beer={beer} />
@@ -277,17 +278,20 @@ function BeerSQL() {
         </div>
       </div>
 
-      <div>
+      {/* Pagination */}
+      <div className="flex items-center justify-center mt-6">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
+          className="bg-secondary text-white rounded-md p-2 mr-2"
         >
           <FaChevronLeft />
         </button>
-        <span>{currentPage}</span>
+        <span className="font-semibold text-lg">{currentPage}</span>
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={beers.length < beersPerPage}
+          className="bg-secondary text-white rounded-md p-2 ml-2"
         >
           <FaChevronRight />
         </button>
