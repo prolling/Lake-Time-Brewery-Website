@@ -3,7 +3,6 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
 import hero1 from "../../images/taproom_images/peanut-butter-porter.jpg";
 import hero2 from "../../images/production_images/kegs.jpg";
 import hero3 from "../../images/taproom_images/taproom_outside.jpg";
@@ -15,25 +14,24 @@ const Hero = () => {
       text: "Find our award winning Peanut Butter Porter at a store near you.",
       button: "Find Our Brews",
       image: hero1,
-      link: "/beers#top",
+      link: "/beers",
     },
     {
       title: "Brewing a Better World",
       text: "We are committed to serving our community and being environmentally friendly through the brewing process.",
       button: "About Lake Time",
       image: hero2,
-      link: "/about#top",
+      link: "/about",
     },
     {
       title: "Our Taproom and Events",
       text: "Explore our taproom and events calendar. Join us for a pint here at Lake Time!",
       button: "Visit Us",
       image: hero3,
-      link: "/events#top",
+      link: "/events",
     },
   ];
 
-  // reference to the slider
   const sliderRef = useRef(null);
 
   const handlePrevClick = () => {

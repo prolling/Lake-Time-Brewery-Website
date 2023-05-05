@@ -1,10 +1,8 @@
 import "./App.css";
 import React from "react";
 import {
-  BrowseRouter,
   Routes,
   Route,
-  Router,
   BrowserRouter,
 } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
@@ -24,7 +22,6 @@ function App() {
       <ScrollToTop />
       <div>
         <NavBar />
-
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -34,7 +31,6 @@ function App() {
           <Route path="/beers" element={<Beers />} />
           <Route path="/team" element={<Team />} />
         </Routes>
-
         <Footer />
       </div>
     </BrowserRouter>

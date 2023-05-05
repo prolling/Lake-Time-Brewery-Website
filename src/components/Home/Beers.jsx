@@ -18,7 +18,6 @@ import beer11 from "../../images/can_images/42-crooked_shillalah/42-can_mockup.p
 import beer12 from "../../images/can_images/48-dunkel_donuts/48-can_mockup.png";
 
 const Beers = () => {
-  // reference to the slider
   const sliderRef = useRef(null);
 
   const handlePrevClick = () => {

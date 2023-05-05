@@ -3,7 +3,6 @@ import cap from "../images/merch_images/m_cap.jpeg";
 import gift_pack_pint from "../images/merch_images/m_gift_pack_pint.jpg";
 import lake_time_growler from "../images/merch_images/m_lake_time_growler.jpg";
 import pint_glassware from "../images/merch_images/m_pint_glassware.jpeg";
-import single_gift_pint from "../images/merch_images/m_single_gift_pint.jpg";
 import sweatshirt from "../images/merch_images/m_sweatshirt.jpeg";
 import t_shirts from "../images/merch_images/t-shirts.jpg";
 import tulips_samplers from "../images/merch_images/m_tulips_samplers.jpeg";
@@ -43,12 +42,6 @@ const Merch = () => {
       short: "Emjoy your Lake Time craft beer at home with our pint glasswear.",
       long: "Our Lake Time Brewery pint glassware is the perfect way to enjoy your favorite beer in style. Made from high-quality glass, these pint glasses feature our brewery's logo and a classic design that's perfect for any occasion. Whether you're sipping a cold one at the brewery or enjoying a beer at home, these glasses are sure to become a go-to in your beer glass collection.",
     },
-    // {
-    //   title: "Single Pint Glass",
-    //   img: single_gift_pint,
-    //   short: "this is a short description",
-    //   long: "this is a long description",
-    // },
     {
       title: "Lake Time Sweatshirt",
       img: sweatshirt,
@@ -111,42 +104,6 @@ const Merch = () => {
       </div>
     </div>
   );
-
-  // return (
-  //   <div className="pt-24 bg-gradient-to-b from-secondary to white via-white">
-  //     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-  //       <h2 className="text-3xl font-extrabold text-white sm:text-4xl text-center mb-8">
-  //         Our Apparel & Merchandise
-  //       </h2>
-  //       <div className="max-w-4xl mx-auto text-center mb-4">
-  //         <h2 className=" text-lg">
-  //           TAKE A LITTLE LAKE TIME HOME! Commemorate your Lake Time experience
-  //           with our ever changing selection of Lake Time merchandise – apparel,
-  //           glassware, koozies & much more. Stop in and check it out!
-  //         </h2>
-  //       </div>
-
-  //       <h3 className="text-xl font-extrabold text-white sm:text-xl text-center"></h3>
-  //       <div className="flex flex-wrap justify-center items-center gap-4 pb-20">
-  //         {merchItems.map((item, index) => (
-  //           <div key={index} className="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-  //             <div className="bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:opacity-75">
-  //               <img
-  //                 src={item.img}
-  //                 alt={item.imgAlt}
-  //                 className="w-full h-48 object-cover"
-  //               />
-  //               <div className="p-4 text-center">
-  //                 <h3 className="text-lg font-semibold">{item.title}</h3>
-  //                 <p className="text-gray-700">{item.text}</p>
-  //               </div>
-  //             </div>
-  //           </div>
-  //         ))}
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default Merch;

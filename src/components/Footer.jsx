@@ -1,10 +1,8 @@
 import React from "react";
 import {
-  AiOutlineClockCircle,
   AiFillFacebook,
   AiOutlineInstagram,
 } from "react-icons/ai";
-import { GrLocation } from "react-icons/gr";
 
 const Footer = () => {
   return (

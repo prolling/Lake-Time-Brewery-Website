@@ -1,12 +1,8 @@
-// BeerCard.js
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import StarRating from "./StarRating";
 import BeerDetails from "./BeerDetails";
 
-function BeerCard({ beer: initialBeer, onRatingUpdate }) {
+function BeerCard({ beer, onRatingUpdate }) {
   const [showDetails, setShowDetails] = useState(false);
-  const [beer, setBeer] = useState(initialBeer);
 
   const handleCloseDetails = async () => {
     setShowDetails(false);
@@ -14,16 +10,6 @@ function BeerCard({ beer: initialBeer, onRatingUpdate }) {
     // Call onRatingUpdate to refetch the beer list
     onRatingUpdate();
   };
-
-  {
-    showDetails && (
-      <BeerDetails
-        beer={beer}
-        onClose={() => setShowDetails(false)}
-        onRatingUpdate={onRatingUpdate}
-      />
-    );
-  }
 
   return (
     <div className="relative p-4 text-center flex-shrink-0">

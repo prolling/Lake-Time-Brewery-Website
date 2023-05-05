@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// TODO: change images
 import sect1 from "../../images/community_images/brewery_chamber.jpg";
 import sect2 from "../../images/production_images/lots_of_cans.jpg";
 import sect3 from "../../images/community_images/brews_on_the_beach.jpg";
@@ -15,7 +14,7 @@ const Giving = () => {
       button: "Our Community",
       img: sect1,
       imgAlt: "Community Service",
-      link: "/about#top",
+      link: "/about",
     },
     {
       index: 2,
@@ -24,7 +23,7 @@ const Giving = () => {
       button: "Our Brewing Process",
       img: sect2,
       imgAlt: "Sustainability",
-      link: "/about#top",
+      link: "/about",
     },
     {
       index: 3,

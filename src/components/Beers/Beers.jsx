@@ -1,7 +1,5 @@
 import React from "react";
-import BeersMain from "./BeersMain";
 import BeerSQL from "./BeerSQL";
-import BeersTesting from "./BeersTesting";
 
 const Beers = () => {
   return (

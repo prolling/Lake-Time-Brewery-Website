@@ -7,23 +7,16 @@ function BeerSQL() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [beersPerPage, setBeersPerPage] = useState(12);
-  const [inputValue, setInputValue] = useState("");
   const [selectedHops, setSelectedHops] = useState("");
   const [abv, setAbv] = useState(11.5);
   const [ibu, setIbu] = useState(70);
-  const [category, setCategory] = useState("");
   const [tempAbv, setTempAbv] = useState(abv);
   const [tempIbu, setTempIbu] = useState(ibu);
-
-  //testing this for ratings updates
-  const [refetch, setRefetch] = useState(false);
-  function handleRatingUpdate() {
-    setRefetch((prev) => !prev);
-  }
+  const [category, setCategory] = useState("");
   
-
   useEffect(() => {
     const fetchBeers = async () => {
       setLoading(true);
@@ -60,6 +53,7 @@ function BeerSQL() {
     setInputValue("");
   };
 
+  // make pagination mobile responsive 
   const updateBeersPerPage = () => {
     if (window.innerWidth <= 768) {
       setBeersPerPage(6);
@@ -97,16 +91,13 @@ function BeerSQL() {
     setIbu(event.target.value);
   }
 
-  // For hops checkbox
   const handleHopChange = (e) => {
     const hop = e.target.value;
     if (selectedHops.includes(hop)) {
-      // If hop is already selected, remove it from the array
       setSelectedHops(
         selectedHops.filter((selectedHop) => selectedHop !== hop)
       );
     } else {
-      // If hop is not selected, add it to the array
       setSelectedHops([...selectedHops, hop]);
     }
   };
@@ -131,11 +122,12 @@ function BeerSQL() {
     return <div className="p-24">Loading...</div>;
   }
 
+  // for debugging purposes
   if (error) {
     return <div className="p-24">{error}</div>;
   }
 
-  
+  // allows user to return to all beers when search is empty
   if (!beers.length) {
     return (
       <div>
@@ -151,9 +143,6 @@ function BeerSQL() {
       </div>
     );
   }
-
-  
-
 
   return (
     <div className="p-24 text-center md:p-24">
@@ -191,7 +180,6 @@ function BeerSQL() {
             {/* Hops Selection */}
             <div className="mb-4 text-left" name="hops box">
               <h3 className="font-semibold text-lg mb-2">Hops</h3>
-              {/* List of hops */}
               {[
                 "Amarillo",
                 "Northern Brewer",

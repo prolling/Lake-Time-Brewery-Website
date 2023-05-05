@@ -7,7 +7,7 @@ function StarRating({ beerId, rating, onUpdate }) {
   const [showSubmit, setShowSubmit] = useState(false);
   const [showAddRating, setShowAddRating] = useState(true);
 
-  // async to add a beer rating and update it in the database
+  // add a beer rating and update it in the database
   async function updateBeerRating(beerId, newRating) {
     console.log("beerId:", beerId);
     try {
@@ -23,19 +23,16 @@ function StarRating({ beerId, rating, onUpdate }) {
           }),
         }
       );
-
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-
-      // Return the updated beer object
       return await response.json();
     } catch (err) {
       console.error(err);
     }
   }
 
-  // async to delete a beer rating and update it in the database
+  // delete a beer rating and update it in the database
   async function deleteLastRating() {
     try {
       const response = await fetch(
@@ -44,17 +41,14 @@ function StarRating({ beerId, rating, onUpdate }) {
           method: "DELETE",
         }
       );
-
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-
       console.log("Rating deleted successfully");
       setNewRating(0);
       setShowAddRating(false);
       setShowSubmit(false);
       setShowDelete(false);
-
       return await response.json();
     } catch (err) {
       console.error(err);
@@ -78,7 +72,6 @@ function StarRating({ beerId, rating, onUpdate }) {
   };
 
   const handleSubmitRatingClick = async () => {
-    // Update the rating in the database
     const updatedBeer = await updateBeerRating(beerId, newRating);
 
     if (onUpdate && updatedBeer) {
@@ -90,7 +83,6 @@ function StarRating({ beerId, rating, onUpdate }) {
   };
 
   const handleDeleteRatingClick = async () => {
-    // Delete the rating from the database
     const updatedBeer = await deleteLastRating(beerId);
 
     if (onUpdate && updatedBeer) {

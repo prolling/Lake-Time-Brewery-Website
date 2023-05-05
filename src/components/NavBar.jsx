@@ -28,45 +28,11 @@ const NavBar = () => {
       id: 2,
       link: "/about",
       name: "About",
-      // sublinks: [
-      //   {
-      //     id: 1,
-      //     link: "/sustainability",
-      //     name: "Sustainability",
-      //   },
-      //   {
-      //     id: 2,
-      //     link: "/careers",
-      //     name: "Careers",
-      //   },
-      //   {
-      //     id: 3,
-      //     link: "/news",
-      //     name: "News",
-      //   },
-      // ],
     },
     {
       id: 3,
       link: "/beers",
       name: "Beers",
-      // sublinks: [
-      //   {
-      //     id: 1,
-      //     link: "/ourbeers",
-      //     name: "Our Beers",
-      //   },
-      //   {
-      //     id: 2,
-      //     link: "/distribution",
-      //     name: "Distribution",
-      //   },
-      //   {
-      //     id: 3,
-      //     link: "/beerfinder",
-      //     name: "Beer Finder",
-      //   },
-      // ],
     },
     {
       id: 4,
@@ -105,10 +71,6 @@ const NavBar = () => {
 
       <ul className="hidden md:flex text-black text-xl font-medium">
         {links.map((link) => (
-          // <li
-          //   key={link.id}
-          //   className="capitalize text-md font-semibold px-4 cursor-pointer hover:text-gray-500 duration-200"
-          // >
           <li
             key={link.id}
             className={`capitalize text-md font-semibold px-4 cursor-pointer ${

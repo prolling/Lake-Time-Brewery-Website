@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AboutTop from "./AboutTop";
 import LearnMore from "./LearnMore";
 

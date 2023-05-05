@@ -12,11 +12,6 @@ const AboutTop = () => {
     setSelectedCard(cardName);
   };
 
-  //   const showElement = (name) => {
-  //     var element = document.getElementById(name);
-  //     element.classList.add("opacity-100");
-  //   };
-
   return (
     <div name="about" className="">
       {/* about story*/}

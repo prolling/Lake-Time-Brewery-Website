@@ -2,35 +2,27 @@ import React, { useState } from "react";
 import StarRating from "./StarRating";
 
 function BeerDetails({ beer: initialBeer, onClose, onRatingUpdate }) {
-  console.log("initialBeer:", initialBeer);
   const [beer, setBeer] = useState(initialBeer);
-  console.log("beer:", beer);
-  console.log("beer.ID:", beer.ID);
 
-  // make it so when you click on the outside of the modal, it closes
   const handleClickOutside = (event) => {
     event.stopPropagation();
     onClose();
-    // Reload the page after the rating update is successful
     window.location.reload();
   };
-  // makes it so it doesn't close when you click on the inside
+
   const handleClickInside = (event) => {
     event.stopPropagation();
   };
 
   // helper functions to clean data
-  // Function to remove quotes around the description
   const cleanDescription = (description) => {
     return description.replace(/"/g, "");
   };
 
-  // check for empty string or null
   const getValue = (label, value) => {
     if (value === "" || value === null) {
       return null;
     }
-    // Round the ABV value to 2 decimal places
     if (label === "ABV") {
       value = parseFloat(value).toFixed(2);
     }
@@ -42,13 +34,10 @@ function BeerDetails({ beer: initialBeer, onClose, onRatingUpdate }) {
   };
 
   async function handleRatingUpdate(updatedBeer) {
-    // Update the beer's rating in the state
     if (updatedBeer) {
       setBeer({ ...beer, rating: updatedBeer.rating });
     }
     console.log("updatedBeer:", updatedBeer);
-
-    // Call onRatingUpdate to refetch the beer list
     onRatingUpdate();
   }
 
