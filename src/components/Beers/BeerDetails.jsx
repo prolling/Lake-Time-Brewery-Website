@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StarRating from "./StarRating";
 
-function BeerDetails({ beer: initialBeer, onClose }) {
+function BeerDetails({ beer: initialBeer, onClose, onRatingUpdate }) {
   console.log("initialBeer:", initialBeer);
   const [beer, setBeer] = useState(initialBeer);
   console.log("beer:", beer);
@@ -11,6 +11,8 @@ function BeerDetails({ beer: initialBeer, onClose }) {
   const handleClickOutside = (event) => {
     event.stopPropagation();
     onClose();
+    // Reload the page after the rating update is successful
+    window.location.reload();
   };
   // makes it so it doesn't close when you click on the inside
   const handleClickInside = (event) => {
@@ -45,6 +47,9 @@ function BeerDetails({ beer: initialBeer, onClose }) {
       setBeer({ ...beer, rating: updatedBeer.rating });
     }
     console.log("updatedBeer:", updatedBeer);
+
+    // Call onRatingUpdate to refetch the beer list
+    onRatingUpdate();
   }
 
   return (

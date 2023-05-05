@@ -17,6 +17,13 @@ function BeerSQL() {
   const [tempAbv, setTempAbv] = useState(abv);
   const [tempIbu, setTempIbu] = useState(ibu);
 
+  //testing this for ratings updates
+  const [refetch, setRefetch] = useState(false);
+  function handleRatingUpdate() {
+    setRefetch((prev) => !prev);
+  }
+  
+
   useEffect(() => {
     const fetchBeers = async () => {
       setLoading(true);
@@ -128,6 +135,7 @@ function BeerSQL() {
     return <div className="p-24">{error}</div>;
   }
 
+  
   if (!beers.length) {
     return (
       <div>
@@ -143,6 +151,9 @@ function BeerSQL() {
       </div>
     );
   }
+
+  
+
 
   return (
     <div className="p-24 text-center md:p-24">
@@ -273,7 +284,10 @@ function BeerSQL() {
         {/* Beer Cards */}
         <div className="flex flex-wrap justify-center items-center">
           {beers.map((beer) => (
-            <BeerCard key={beer.id} beer={beer} />
+            <BeerCard key={beer.id} 
+            beer={beer} 
+            onRatingUpdate={handleRatingUpdate}
+            />
           ))}
         </div>
       </div>

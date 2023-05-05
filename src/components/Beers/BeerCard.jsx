@@ -4,8 +4,26 @@ import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
 import BeerDetails from "./BeerDetails";
 
-function BeerCard({ beer }) {
+function BeerCard({ beer: initialBeer, onRatingUpdate }) {
   const [showDetails, setShowDetails] = useState(false);
+  const [beer, setBeer] = useState(initialBeer);
+
+  const handleCloseDetails = async () => {
+    setShowDetails(false);
+
+    // Call onRatingUpdate to refetch the beer list
+    onRatingUpdate();
+  };
+
+  {
+    showDetails && (
+      <BeerDetails
+        beer={beer}
+        onClose={() => setShowDetails(false)}
+        onRatingUpdate={onRatingUpdate}
+      />
+    );
+  }
 
   return (
     <div className="relative p-4 text-center flex-shrink-0">
@@ -16,7 +34,11 @@ function BeerCard({ beer }) {
         onClick={() => setShowDetails(true)}
       />
       {showDetails && (
-        <BeerDetails beer={beer} onClose={() => setShowDetails(false)} />
+        <BeerDetails
+          beer={beer}
+          onClose={handleCloseDetails}
+          onRatingUpdate={onRatingUpdate}
+        />
       )}
     </div>
   );

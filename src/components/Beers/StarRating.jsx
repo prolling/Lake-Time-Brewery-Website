@@ -3,8 +3,11 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 function StarRating({ beerId, rating, onUpdate }) {
   const [newRating, setNewRating] = useState(rating);
-  const [editMode, setEditMode] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
+  const [showSubmit, setShowSubmit] = useState(false);
+  const [showAddRating, setShowAddRating] = useState(true);
 
+  // async to add a beer rating and update it in the database
   async function updateBeerRating(beerId, newRating) {
     console.log("beerId:", beerId);
     try {
@@ -32,10 +35,36 @@ function StarRating({ beerId, rating, onUpdate }) {
     }
   }
 
+  // async to delete a beer rating and update it in the database
+  async function deleteLastRating() {
+    try {
+      const response = await fetch(
+        `http://localhost:3010/beers/${beerId}/last_rating`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      console.log("Rating deleted successfully");
+      setNewRating(0);
+      setShowAddRating(false);
+      setShowSubmit(false);
+      setShowDelete(false);
+
+      return await response.json();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   StarRating.updateBeerRating = updateBeerRating;
 
   const handleStarClick = (index) => {
-    if (editMode) {
+    if (showSubmit) {
       setNewRating(index + 1);
     }
   };
@@ -43,7 +72,9 @@ function StarRating({ beerId, rating, onUpdate }) {
   const handleAddRatingClick = () => {
     console.log("beerId:", beerId);
     setNewRating(0);
-    setEditMode(true);
+    setShowAddRating(false);
+    setShowDelete(false);
+    setShowSubmit(true);
   };
 
   const handleSubmitRatingClick = async () => {
@@ -53,7 +84,21 @@ function StarRating({ beerId, rating, onUpdate }) {
     if (onUpdate && updatedBeer) {
       onUpdate(updatedBeer);
     }
-    setEditMode(false);
+    setShowAddRating(false);
+    setShowSubmit(false);
+    setShowDelete(true);
+  };
+
+  const handleDeleteRatingClick = async () => {
+    // Delete the rating from the database
+    const updatedBeer = await deleteLastRating(beerId);
+
+    if (onUpdate && updatedBeer) {
+      onUpdate(updatedBeer);
+    }
+    setShowDelete(false);
+    setShowSubmit(false);
+    setShowAddRating(false);
   };
 
   return (
@@ -73,7 +118,7 @@ function StarRating({ beerId, rating, onUpdate }) {
           </span>
         ))}
       </div>
-      {!editMode ? (
+      {showAddRating ? (
         <button
           className="ml-2 text-blue-600 hover:text-blue-800 focus:outline-none"
           onClick={handleAddRatingClick}
@@ -81,12 +126,24 @@ function StarRating({ beerId, rating, onUpdate }) {
           Add rating
         </button>
       ) : (
-        <button
-          className="ml-2 text-green-600 hover:text-green-800 focus:outline-none"
-          onClick={handleSubmitRatingClick}
-        >
-          Submit rating
-        </button>
+        <>
+          {showDelete ? (
+            <button
+              className="ml-2 text-red-600 hover:text-red-800 focus:outline-none"
+              onClick={handleDeleteRatingClick}
+            >
+              Delete rating
+            </button>
+          ) : null}
+          {showSubmit ? (
+            <button
+              className="ml-2 text-green-600 hover:text-green-800 focus:outline-none"
+              onClick={handleSubmitRatingClick}
+            >
+              Submit rating
+            </button>
+          ) : null}
+        </>
       )}
     </div>
   );
